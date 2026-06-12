@@ -82,7 +82,7 @@ const approach = [
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Buxton Mediation | Peter Buxton KC, Mediator &amp; Arbitrator</title>
 		<meta
@@ -92,15 +92,32 @@ const approach = [
 	</head>
 	<body class="bg-tan-05 font-sans text-navy antialiased scroll-smooth">
 		<!-- Header / Nav -->
-		<header class="sticky top-0 z-50 border-b border-tan-60 bg-tan-05/95 backdrop-blur">
-			<nav class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
-				<a href="#home" class="font-alt text-lg font-semibold uppercase tracking-[0.1em] text-navy">
-					Buxton Mediation
+		<header class="sticky top-0 z-50 overflow-visible border-b border-tan-60 bg-tan-05/95 backdrop-blur">
+			<nav class="mx-auto flex max-w-6xl min-h-[80px] flex-wrap items-center justify-between gap-3 overflow-visible px-4 py-2 sm:px-6 md:min-h-[112.5px]">
+				<a href="#home" class="flex items-center overflow-visible">
+					<img
+						src="/buxton-adr-logo.svg"
+						alt="Buxton ADR"
+						class="h-auto w-[160px] overflow-visible sm:w-[200px] md:w-[280px]"
+					/>
 				</a>
-				<ul class="flex flex-wrap gap-x-6 gap-y-2 font-alt text-sm font-medium uppercase tracking-[0.04em] text-navy/70">
+
+				<!-- Mobile menu toggle -->
+				<input type="checkbox" id="nav-toggle" class="peer hidden" />
+				<label
+					for="nav-toggle"
+					aria-label="Toggle navigation menu"
+					class="flex h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center md:hidden"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+					</svg>
+				</label>
+
+				<ul class="hidden w-full flex-col gap-x-6 gap-y-4 border-t border-tan-60 pt-4 font-alt text-sm font-medium uppercase tracking-[0.04em] text-navy/70 peer-checked:flex md:flex md:w-auto md:flex-row md:items-center md:border-0 md:pt-0">
 					{navLinks.map((link) => (
 						<li>
-							<a href={link.href} class="transition-colors hover:text-satsuma">
+							<a href={link.href} class="block transition-colors hover:text-satsuma">
 								{link.label}
 							</a>
 						</li>
@@ -114,7 +131,7 @@ const approach = [
 			<section id="home" class="flex flex-wrap bg-navy text-center text-white">
 				<div class="flex flex-1 basis-full items-center justify-center px-6 py-20 lg:basis-1/2 lg:justify-end lg:py-28">
 					<div class="max-w-md lg:pr-12">
-						<h1 class="font-alt text-5xl font-medium uppercase leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+						<h1 class="font-alt text-4xl font-medium uppercase leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
 							Peter<br />Buxton<span class="tracking-normal">,</span> KC
 						</h1>
 						<p class="mt-3 font-alt text-xl tracking-wide sm:text-2xl">Mediator &amp; Arbitrator</p>
