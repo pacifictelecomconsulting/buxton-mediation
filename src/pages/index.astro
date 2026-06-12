@@ -155,7 +155,7 @@ const approach = [
 			</section>
 
 			<!-- Intro -->
-			<section class="bg-tan-50">
+			<section class="bg-white">
 				<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
 					<p class="font-alt text-xs font-semibold uppercase tracking-[0.25em] text-accent">
 						About Peter
@@ -222,8 +222,8 @@ const approach = [
 			</section>
 
 			<!-- Practice area sections: Med-Arb, Mediation, Arbitration -->
-			{practiceAreas.map((area, i) => (
-				<section id={area.id} class={`page-section ${i % 2 === 0 ? 'bg-tan-05' : 'bg-tan-50'}`}>
+			{practiceAreas.map((area) => (
+				<section id={area.id} class="page-section bg-cream">
 					<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
 						<div class="max-w-3xl">
 							{area.eyebrow && (
@@ -250,7 +250,7 @@ const approach = [
 			))}
 
 			<!-- About -->
-			<section id="about" class="page-section bg-tan-50">
+			<section id="about" class="page-section bg-white">
 				<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
 					<div class="max-w-3xl">
 						<p class="font-alt text-xs font-semibold uppercase tracking-[0.25em] text-accent">
@@ -271,7 +271,7 @@ const approach = [
 			</section>
 
 			<!-- Fees -->
-			<section id="fees" class="page-section bg-tan-05">
+			<section id="fees" class="page-section bg-cream">
 				<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
 					<div class="max-w-3xl">
 						<p class="font-alt text-xs font-semibold uppercase tracking-[0.25em] text-accent">
