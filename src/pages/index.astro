@@ -223,7 +223,7 @@ const approach = [
 
 			<!-- Practice area sections: Med-Arb, Mediation, Arbitration -->
 			{practiceAreas.map((area) => (
-				<section id={area.id} class="page-section bg-cream">
+				<section id={area.id} class={`page-section ${area.id === 'mediation' ? 'bg-white' : 'bg-cream'}`}>
 					<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
 						<div class="max-w-3xl">
 							{area.eyebrow && (
