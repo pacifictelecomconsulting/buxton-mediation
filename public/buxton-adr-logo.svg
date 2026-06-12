@@ -4,5 +4,5 @@
   <polygon points="42,22 70,38 70,70 42,86 16,70 16,38" fill="none" stroke="#E8652A" stroke-width="2.5"/>
   <text x="100" y="30" font-family="sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#1a3a5c">BUXTON ADR</text>
   <line x1="100" y1="38" x2="335" y2="38" stroke="#E8652A" stroke-width="0.8"/>
-  <text x="100" y="54" font-family="sans-serif" font-size="9" letter-spacing="1.5" fill="#888">REMEDIATION · RESOLUTION · RESULTS</text>
+  <text x="100" y="54" font-family="sans-serif" font-size="9" letter-spacing="1.5" fill="#888">MEDIATION · ARBITRATION · MED-ARB</text>
 </svg>
