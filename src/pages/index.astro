@@ -159,6 +159,14 @@ const approach = [
 					<p class="font-alt text-xs font-semibold uppercase tracking-[0.25em] text-[#E8652A]">
 						About Peter
 					</p>
+					<p class="mt-3 font-alt text-xs font-semibold uppercase tracking-[0.15em] text-[#1a3a5c]">
+						{['King\'s Counsel — 2015', 'Mediate BC Roster', 'Called to Bar — 1981'].map((item, i) => (
+							<>
+								{i > 0 && <span class="mx-2 text-[#E8652A]">&middot;</span>}
+								{item}
+							</>
+						))}
+					</p>
 					<div class="mt-3 grid gap-10 lg:grid-cols-2 lg:gap-16">
 						<p class="text-navy/80">
 							Called to the Bar in British Columbia in 1981, Peter Buxton spent
@@ -182,13 +190,6 @@ const approach = [
 								when helping parties reach a resolution.
 							</p>
 						</div>
-					</div>
-					<div class="mt-8 flex flex-wrap gap-3">
-						{['King\'s Counsel — 2015', 'Mediate BC Roster', 'Called to Bar — 1981'].map((badge) => (
-							<span class="rounded-full border border-[#1a3a5c] bg-white px-4 py-1.5 text-sm text-navy">
-								{badge}
-							</span>
-						))}
 					</div>
 				</div>
 			</section>
