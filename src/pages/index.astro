@@ -510,27 +510,9 @@ const approach = [
 			function pad(n) { return String(n).padStart(2, '0'); }
 			function ds(y, m, d) { return y + '-' + pad(m + 1) + '-' + pad(d); }
 
-			function parseIcs(raw) {
-				var text = raw.replace(/\r\n[ \t]/g, '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+			function buildEventMap(events) {
 				var map = {};
-				text.split(/BEGIN:VEVENT/).slice(1).forEach(function(block) {
-					var summaryM = block.match(/^SUMMARY:(.+)$/m);
-					var startM   = block.match(/^DTSTART[^:\r\n]*:(\d{8})/m);
-					var endM     = block.match(/^DTEND[^:\r\n]*:(\d{8})/m);
-					if (!startM) return;
-					var summary = ((summaryM && summaryM[1]) || '').trim().toLowerCase();
-					var type = summary.indexOf('hold') !== -1 ? 'on-hold' : 'booked';
-					function toD(s) { return new Date(+s.slice(0,4), +s.slice(4,6)-1, +s.slice(6,8)); }
-					var start = toD(startM[1]);
-					var end = new Date(start.getTime() + 86400000);
-					if (endM) { var e = toD(endM[1]); if (e > start) end = e; }
-					for (var cur = new Date(start); cur < end; cur = new Date(cur.getTime() + 86400000)) {
-						var dow = cur.getDay();
-						if (dow >= 1 && dow <= 5) {
-							map[cur.getFullYear() + '-' + pad(cur.getMonth()+1) + '-' + pad(cur.getDate())] = type;
-						}
-					}
-				});
+				(events || []).forEach(function(e) { map[e.date] = e.type; });
 				return map;
 			}
 
@@ -582,8 +564,8 @@ const approach = [
 			render(); // render empty calendar immediately so nav/headers show
 
 			fetch('/api/calendar')
-				.then(function(r) { return r.ok ? r.text() : Promise.reject(r.status); })
-				.then(function(ics) { eventMap = parseIcs(ics); render(); })
+				.then(function(r) { return r.ok ? r.json() : Promise.reject(r.status); })
+				.then(function(data) { eventMap = buildEventMap(data.events); render(); })
 				.catch(function() { render(); }); // render without events on error
 
 			var prev = document.getElementById('cal-prev');
