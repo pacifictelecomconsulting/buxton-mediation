@@ -7,6 +7,7 @@ const navLinks = [
 	{ href: '#arbitration', label: 'Arbitration' },
 	{ href: '#about', label: 'About' },
 	{ href: '#fees', label: 'Fees' },
+	{ href: '#booking', label: 'Booking' },
 	{ href: '#contact', label: 'Contact' },
 ];
 
@@ -288,6 +289,132 @@ const approach = [
 				</div>
 			</section>
 
+			<!-- Booking -->
+			<section id="booking" class="page-section bg-white">
+				<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+					<div class="max-w-3xl">
+						<p class="font-alt text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+							Availability
+						</p>
+						<h2 class="mt-3 font-alt text-3xl font-semibold tracking-[0.02em] sm:text-4xl">Check Availability</h2>
+						<hr class="my-5 h-[3px] w-[2.85em] border-0 bg-satsuma" />
+						<p class="max-w-prose text-balance text-lg text-navy/80">
+							Review available dates below and submit a booking request. Peter will confirm your date directly.
+						</p>
+					</div>
+
+					<div class="mt-10 grid gap-12 lg:grid-cols-2 lg:gap-16">
+
+						<!-- Calendar + legend -->
+						<div>
+							<iframe
+								src="https://calendar.google.com/calendar/embed?src=c_72f50fd5e92e08a4126617d184bde2b1b05f0dabfe4c40ec4127610ab69ca008%40group.calendar.google.com&ctz=America%2FVancouver&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH"
+								style="border:0; display:block;"
+								width="100%"
+								height="500"
+								frameborder="0"
+								scrolling="no"
+								class="w-full rounded-[0.625rem]"
+							></iframe>
+							<div class="mt-5 flex flex-wrap gap-6 text-sm text-navy/80">
+								<div class="flex items-center gap-2">
+									<span class="h-3 w-3 rounded-full" style="background:#1a7a3c;"></span>
+									<span>Available</span>
+								</div>
+								<div class="flex items-center gap-2">
+									<span class="h-3 w-3 rounded-full" style="background:#1a3a5c;"></span>
+									<span>Booked</span>
+								</div>
+								<div class="flex items-center gap-2">
+									<span class="h-3 w-3 rounded-full" style="background:#E8652A;"></span>
+									<span>On Hold</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Booking request form -->
+						<div>
+							<h3 class="font-alt text-lg font-semibold tracking-wide">Booking Request</h3>
+							<p class="mt-1 text-sm text-navy/60">Submit your preferred date and we'll confirm availability.</p>
+
+							<form
+								id="booking-form"
+								action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID"
+								method="POST"
+								class="mt-6 grid gap-6"
+							>
+								<div class="grid gap-6 sm:grid-cols-2">
+									<div>
+										<label for="full-name" class="block text-sm text-navy/60">Full Name <span class="text-accent">*</span></label>
+										<input
+											type="text"
+											id="full-name"
+											name="full_name"
+											required
+											class="mt-2 block w-full border-0 border-b border-navy/25 bg-transparent px-0 py-2 text-navy placeholder-navy/30 focus:border-accent focus:outline-none focus:ring-0"
+										/>
+									</div>
+									<div>
+										<label for="book-email" class="block text-sm text-navy/60">Email <span class="text-accent">*</span></label>
+										<input
+											type="email"
+											id="book-email"
+											name="email"
+											required
+											class="mt-2 block w-full border-0 border-b border-navy/25 bg-transparent px-0 py-2 text-navy placeholder-navy/30 focus:border-accent focus:outline-none focus:ring-0"
+										/>
+									</div>
+								</div>
+								<div class="grid gap-6 sm:grid-cols-2">
+									<div>
+										<label for="telephone" class="block text-sm text-navy/60">Telephone Number <span class="text-accent">*</span></label>
+										<input
+											type="tel"
+											id="telephone"
+											name="telephone"
+											required
+											class="mt-2 block w-full border-0 border-b border-navy/25 bg-transparent px-0 py-2 text-navy placeholder-navy/30 focus:border-accent focus:outline-none focus:ring-0"
+										/>
+									</div>
+									<div>
+										<label for="firm" class="block text-sm text-navy/60">Firm / Organization</label>
+										<input
+											type="text"
+											id="firm"
+											name="firm"
+											class="mt-2 block w-full border-0 border-b border-navy/25 bg-transparent px-0 py-2 text-navy placeholder-navy/30 focus:border-accent focus:outline-none focus:ring-0"
+										/>
+									</div>
+								</div>
+								<div>
+									<label for="style-of-cause" class="block text-sm text-navy/60">Full Style of Cause <span class="text-accent">*</span></label>
+									<input
+										type="text"
+										id="style-of-cause"
+										name="style_of_cause"
+										required
+										class="mt-2 block w-full border-0 border-b border-navy/25 bg-transparent px-0 py-2 text-navy placeholder-navy/30 focus:border-accent focus:outline-none focus:ring-0"
+									/>
+								</div>
+								<input type="hidden" name="_subject" value="New Booking Request — Buxton ADR" />
+								<button
+									type="submit"
+									class="w-fit rounded-[5px] bg-logo-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent"
+								>
+									Submit Request
+								</button>
+							</form>
+
+							<!-- Success message (hidden by default) -->
+							<div id="booking-success" class="hidden mt-6 rounded-[0.625rem] border border-navy/20 bg-cream p-6">
+								<p class="font-alt text-base font-semibold text-navy">Request received.</p>
+								<p class="mt-1 text-sm text-navy/80">Thank you — Peter will be in touch shortly to confirm your date.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<!-- Contact -->
 			<section id="contact" class="page-section bg-navy text-white">
 				<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
@@ -347,5 +474,27 @@ const approach = [
 				</p>
 			</div>
 		</footer>
+
+		<script>
+			const form = document.getElementById('booking-form') as HTMLFormElement | null;
+			const success = document.getElementById('booking-success');
+			if (form && success) {
+				form.addEventListener('submit', async (e) => {
+					e.preventDefault();
+					const data = new FormData(form);
+					const res = await fetch(form.action, {
+						method: 'POST',
+						body: data,
+						headers: { Accept: 'application/json' },
+					});
+					if (res.ok) {
+						form.classList.add('hidden');
+						success.classList.remove('hidden');
+					} else {
+						alert('Something went wrong — please try again or email info@pacifictelecomconsulting.com directly.');
+					}
+				});
+			}
+		</script>
 	</body>
 </html>
