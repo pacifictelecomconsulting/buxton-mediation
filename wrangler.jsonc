@@ -1,8 +1,10 @@
 {
 	"compatibility_date": "2026-06-10",
 	"name": "buxton-mediation",
+	"main": "./worker.ts",
 	"assets": {
 		"directory": "./dist",
+		"binding": "ASSETS",
 		"not_found_handling": "404-page"
 	}
 }

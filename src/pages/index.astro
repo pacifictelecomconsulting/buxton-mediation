@@ -1,42 +1,6 @@
 ---
 import '../styles/global.css';
 
-// Fetch and parse public Google Calendar iCal at build time
-interface CalEvent { date: string; type: 'booked' | 'on-hold'; }
-let calendarEvents: CalEvent[] = [];
-
-try {
-	const calId = 'c_72f50fd5e92e08a4126617d184bde2b1b05f0dabfe4c40ec4127610ab69ca008%40group.calendar.google.com';
-	const res = await fetch(`https://calendar.google.com/calendar/ical/${calId}/public/basic.ics`);
-	if (res.ok) {
-		const raw = await res.text();
-		const text = raw.replace(/\r\n[ \t]/g, '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
-		const toDate = (s: string) => new Date(+s.slice(0,4), +s.slice(4,6)-1, +s.slice(6,8));
-		const pad = (n: number) => String(n).padStart(2, '0');
-
-		for (const block of text.split(/BEGIN:VEVENT/).slice(1)) {
-			const summaryM = block.match(/^SUMMARY:(.+)$/m);
-			const startM = block.match(/^DTSTART[^:\r\n]*:(\d{8})/m);
-			const endM = block.match(/^DTEND[^:\r\n]*:(\d{8})/m);
-			if (!startM) continue;
-
-			const summary = (summaryM?.[1] ?? '').trim().toLowerCase();
-			const type: CalEvent['type'] = summary.includes('hold') ? 'on-hold' : 'booked';
-
-			const start = toDate(startM[1]);
-			let end = new Date(start.getTime() + 86400000);
-			if (endM) { const e = toDate(endM[1]); if (e > start) end = e; }
-
-			for (let cur = new Date(start); cur < end; cur = new Date(cur.getTime() + 86400000)) {
-				const dow = cur.getDay();
-				if (dow >= 1 && dow <= 5) {
-					calendarEvents.push({ date: `${cur.getFullYear()}-${pad(cur.getMonth()+1)}-${pad(cur.getDate())}`, type });
-				}
-			}
-		}
-	}
-} catch { /* silently fail — calendar renders with no events */ }
-
 const navLinks = [
 	{ href: '#med-arb', label: 'Med-Arb' },
 	{ href: '#mediation', label: 'Mediation' },
@@ -535,11 +499,9 @@ const approach = [
 			</div>
 		</footer>
 
-		<script is:inline define:vars={{ calendarEvents }}>
+		<script is:inline>
 		(function () {
 			var eventMap = {};
-			calendarEvents.forEach(function(e) { eventMap[e.date] = e.type; });
-
 			var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 			var today = new Date();
 			var year = today.getFullYear();
@@ -547,6 +509,30 @@ const approach = [
 
 			function pad(n) { return String(n).padStart(2, '0'); }
 			function ds(y, m, d) { return y + '-' + pad(m + 1) + '-' + pad(d); }
+
+			function parseIcs(raw) {
+				var text = raw.replace(/\r\n[ \t]/g, '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+				var map = {};
+				text.split(/BEGIN:VEVENT/).slice(1).forEach(function(block) {
+					var summaryM = block.match(/^SUMMARY:(.+)$/m);
+					var startM   = block.match(/^DTSTART[^:\r\n]*:(\d{8})/m);
+					var endM     = block.match(/^DTEND[^:\r\n]*:(\d{8})/m);
+					if (!startM) return;
+					var summary = ((summaryM && summaryM[1]) || '').trim().toLowerCase();
+					var type = summary.indexOf('hold') !== -1 ? 'on-hold' : 'booked';
+					function toD(s) { return new Date(+s.slice(0,4), +s.slice(4,6)-1, +s.slice(6,8)); }
+					var start = toD(startM[1]);
+					var end = new Date(start.getTime() + 86400000);
+					if (endM) { var e = toD(endM[1]); if (e > start) end = e; }
+					for (var cur = new Date(start); cur < end; cur = new Date(cur.getTime() + 86400000)) {
+						var dow = cur.getDay();
+						if (dow >= 1 && dow <= 5) {
+							map[cur.getFullYear() + '-' + pad(cur.getMonth()+1) + '-' + pad(cur.getDate())] = type;
+						}
+					}
+				});
+				return map;
+			}
 
 			function buildWeeks(y, m) {
 				var days = new Date(y, m + 1, 0).getDate();
@@ -568,7 +554,6 @@ const approach = [
 				var grid = document.getElementById('cal-grid');
 				if (!title || !grid) return;
 				title.textContent = MONTHS[month] + ' ' + year;
-
 				var todayStr = ds(today.getFullYear(), today.getMonth(), today.getDate());
 				var html = '';
 				buildWeeks(year, month).forEach(function(week) {
@@ -580,7 +565,7 @@ const approach = [
 						var isPast = dateStr < todayStr;
 						var isToday = dateStr === todayStr;
 						var bg, color, weight, opacity;
-						if (type === 'booked')    { bg = '#23364c'; color = '#fff'; weight = '600'; opacity = isPast ? '0.45' : '1'; }
+						if (type === 'booked')       { bg = '#23364c'; color = '#fff'; weight = '600'; opacity = isPast ? '0.45' : '1'; }
 						else if (type === 'on-hold') { bg = '#E8652A'; color = '#fff'; weight = '600'; opacity = isPast ? '0.45' : '1'; }
 						else { bg = '#fafafa'; color = isPast ? '#bbb' : '#23364c'; weight = '400'; opacity = '1'; }
 						var border = isToday ? '2px solid #E8652A' : '1px solid #e8e3dd';
@@ -591,11 +576,20 @@ const approach = [
 				grid.innerHTML = html;
 			}
 
+			// Show loading state, fetch live events, then render
+			var grid = document.getElementById('cal-grid');
+			if (grid) grid.innerHTML = '<p style="color:#23364c;opacity:0.5;font-size:0.875rem;padding:1rem 0;">Loading availability…</p>';
+			render(); // render empty calendar immediately so nav/headers show
+
+			fetch('/api/calendar')
+				.then(function(r) { return r.ok ? r.text() : Promise.reject(r.status); })
+				.then(function(ics) { eventMap = parseIcs(ics); render(); })
+				.catch(function() { render(); }); // render without events on error
+
 			var prev = document.getElementById('cal-prev');
 			var next = document.getElementById('cal-next');
 			if (prev) prev.addEventListener('click', function() { month--; if (month < 0) { month = 11; year--; } render(); });
 			if (next) next.addEventListener('click', function() { month++; if (month > 11) { month = 0; year++; } render(); });
-			render();
 		})();
 		</script>
 
