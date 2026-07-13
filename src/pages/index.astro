@@ -2,81 +2,106 @@
 import '../styles/global.css';
 
 const navLinks = [
-	{ href: '#med-arb', label: 'Med-Arb' },
-	{ href: '#mediation', label: 'Mediation' },
-	{ href: '#arbitration', label: 'Arbitration' },
+	{ href: '#practice', label: 'Practice' },
 	{ href: '#about', label: 'About' },
-	{ href: '#fees', label: 'Fees' },
-	{ href: '#booking', label: 'Booking' },
-	{ href: '#contact', label: 'Contact' },
+	{ href: '#med-arb', label: 'Med-Arb' },
 ];
 
-const practiceAreas = [
+const practice = [
 	{
-		id: 'med-arb',
-		eyebrow: 'New Specialty',
-		title: 'Med-Arb',
-		intro:
-			'A single, seamless process that combines the collaborative strength of mediation with the binding finality of arbitration — guaranteeing a resolution.',
-		items: [
-			'Begins as a facilitated mediation between the parties',
-			'If issues remain unresolved, the same neutral becomes arbitrator',
-			'Issues a final, binding decision without separate proceedings',
-			'Saves time and cost versus running two distinct processes',
-		],
-	},
-	{
-		id: 'mediation',
-		eyebrow: 'Core Service',
 		title: 'Mediation',
-		intro:
-			'A confidential, voluntary process that helps parties communicate, identify their real interests, and reach a resolution that works for everyone.',
-		items: [
-			'Commercial and business disputes',
-			'Workplace and employment conflicts',
-			'Family and divorce matters',
-			'Real estate and property disputes',
-			'Construction disputes',
-			'Community and neighbour conflicts',
-		],
+		featured: false,
+		body: 'A structured process where Peter facilitates negotiation between parties. He asks the right questions, reads what is not being said, and helps both sides arrive at a resolution they can stand behind. Seventy to eighty percent of med-arb files settle at this stage.',
 	},
 	{
-		id: 'arbitration',
-		eyebrow: 'Core Service',
+		title: 'Med-Arb',
+		featured: true,
+		body: 'The process begins as a mediation. If the parties reach agreement, the file closes. If they don’t, Peter moves seamlessly into the role of arbitrator and delivers a binding decision. One neutral. One process. Resolution guaranteed.',
+	},
+	{
 		title: 'Arbitration',
-		intro:
-			'A streamlined alternative to litigation. As a neutral arbitrator, Peter reviews the evidence and arguments and issues a fair, well-reasoned decision.',
-		items: [
-			'Binding arbitration — a final, enforceable decision',
-			'Non-binding arbitration — an expert advisory opinion',
-			'Greater speed, privacy, and flexibility than court',
-			'Procedure tailored to the scale of the dispute',
-		],
+		featured: false,
+		body: 'When a decision needs to be made, Peter makes it. As a former trial lawyer with over four decades of courtroom experience, he understands what evidence means, how findings of fact are made, and what a written decision needs to hold up.',
 	},
 ];
 
-const approach = [
+const worksWith = [
 	{
-		heading: 'Clear and direct',
-		description:
-			'Peter listens, clarifies the issues, and helps parties understand their positions in order to drive a resolution.',
+		title: 'Law Firms & Solo Practitioners',
+		body: 'Personal injury, estate, and commercial matters that have stalled or are too complex for a standard mediation. Peter gives counsel the read on the file they need to advise their clients confidently.',
 	},
 	{
-		heading: 'Prepared and thorough',
-		description:
-			'He works to understand the details of the dispute and the dynamics between the parties before the process begins.',
+		title: 'Estate & Wills Variation',
+		body: 'Files where family relationships are strained, timelines are urgent, and a court process would cost more than the estate can bear. A binding outcome, with privacy protected throughout.',
 	},
 	{
-		heading: 'Flexible and pragmatic',
-		description:
-			'He focuses on what matters most to each party, adapting the process to fit — including in-person, virtual, or hybrid formats.',
+		title: 'Corporate & Commercial Parties',
+		body: 'Shareholder, partnership, and contractual disputes where a binding outcome matters and the cost of full-blown litigation is disproportionate to the amount at stake.',
 	},
 	{
-		heading: 'Calm and trust-building',
-		description:
-			'A structured, confidential process that helps parties reach resolution while preserving relationships where possible.',
+		title: 'Sports Organizations',
+		body: 'Membership, eligibility, and governance decisions that need to be made quickly, fairly, and by someone with real governance experience. Peter has served at every level of organized sport in Canada.',
 	},
 ];
+
+const credentialTags = [
+	'K.C.',
+	'Harvard Certified',
+	'Med-Arb Specialist',
+	'Mediate BC Civil Roster',
+	'Law Society of BC',
+	'Called to Bar 1981',
+];
+
+const testimonials = [
+	{ role: 'Personal Injury Counsel', firm: 'Vancouver, BC' },
+	{ role: 'Estate Litigation Counsel', firm: 'Lower Mainland, BC' },
+	{ role: 'Corporate Counsel', firm: 'Surrey, BC' },
+];
+
+const faqs = [
+	{
+		q: 'What is Med-Arb?',
+		a: 'A hybrid process that begins as a mediation. If the parties reach full settlement, the file closes there. If issues remain, the same neutral transitions into arbitration and delivers a binding written decision. Parties agree to this structure upfront, in writing.',
+	},
+	{
+		q: 'Why use the same person for both roles?',
+		a: 'Continuity. The med-arbitrator already understands the file, the parties, and the issues in dispute. There is no handoff, no duplication of preparation costs, and no loss of context. The transition is seamless.',
+	},
+	{
+		q: 'Is the arbitral decision enforceable?',
+		a: 'Yes. A med-arb agreement is a binding civil contract. The arbitrator’s award is final and can be filed in court. It is not subject to appeal unless the parties have agreed otherwise.',
+	},
+	{
+		q: 'What does it cost compared to litigation?',
+		a: 'Significantly less. Depending on complexity, total process cost typically ranges from $20,000 to $50,000 across both phases, compared to the six-figure cost of a multi-day trial and the risk of an adverse costs award.',
+	},
+	{
+		q: 'How long does it take?',
+		a: 'Most files resolve within three to six months of signing the Med-Arb agreement. Court timelines for a comparable matter in BC currently run three years or longer.',
+	},
+	{
+		q: 'What types of disputes is Med-Arb suited for?',
+		a: 'Any dispute where a binding outcome is needed and court timelines are unacceptable. Common applications include personal injury, estate and wills variation, commercial and shareholder disputes, employment, and sports governance.',
+	},
+	{
+		q: 'How is procedural fairness protected?',
+		a: 'Peter addresses this directly at intake. The Med-Arb agreement specifies what information from the mediation phase can and cannot inform the arbitration. Parties with concerns about the single-neutral model can discuss alternatives on the initial call.',
+	},
+	{
+		q: 'How does Peter handle the pre-mediation process?',
+		a: 'Peter conducts teleconferences with counsel before every file begins. This gives him a clear picture of what is and is not in the brief, and allows him to understand the real issues before anyone is in the room together.',
+	},
+];
+
+// Hexagon geometry extracted from /public/Buxton_ADR_Badge.png:
+// pointy-top regular hexagons, width:height ≈ √3:2 (measured 0.859).
+// Single hexagon in a 174×200 box (r=100 → W=173.2, H=200).
+const HEX = '87,2 172,51 172,149 87,198 2,149 2,51';
+// Small heading accent hexagon (Appellate Red outline).
+const hexTiny = `<svg viewBox="0 0 174 200" width="12" height="14" aria-hidden="true" class="inline-block shrink-0"><polygon points="${HEX}" class="hex-line-red" stroke-width="10"/></svg>`;
+// Divider hexagon (Appellate Red outline).
+const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="true" class="shrink-0"><polygon points="${HEX}" class="hex-line-red" stroke-width="9"/></svg>`;
 ---
 
 <html lang="en">
@@ -86,21 +111,22 @@ const approach = [
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Buxton Mediation | Peter Buxton KC, Mediator &amp; Arbitrator</title>
+		<title>Buxton ADR | Peter Buxton, K.C. — Mediator · Arbitrator · Med-Arb Specialist</title>
 		<meta
 			name="description"
-			content="Peter Buxton KC offers mediation, arbitration, and Med-Arb services to clients across the Lower Mainland, BC. Process driven solutions to complex disputes."
+			content="Peter Buxton, K.C. — forty-five years in the room. Med-Arb delivers a binding decision in months, not years, with every chance to settle first. Mediation, arbitration, and Med-Arb across British Columbia."
 		/>
 	</head>
-	<body class="bg-tan-05 font-sans text-navy antialiased scroll-smooth">
+	<body class="bg-clean-page font-sans text-slate-ink antialiased">
 		<!-- Header / Nav -->
-		<header class="sticky top-0 z-50 overflow-visible border-b border-tan-60 bg-tan-05/95 backdrop-blur">
-			<nav class="mx-auto flex max-w-6xl min-h-[80px] flex-wrap items-center justify-between gap-3 overflow-visible px-4 py-2 sm:px-6 md:min-h-[112.5px]">
-				<a href="#home" class="flex items-center overflow-visible">
+		<header class="sticky top-0 z-50 border-b border-white/10 bg-slate-ink/95 backdrop-blur">
+			<nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2 sm:px-6">
+				<a href="#top" class="flex items-center" aria-label="Buxton ADR home">
 					<img
-						src="/buxton-adr-logo.svg"
-						alt="Buxton ADR"
-						class="h-auto w-[160px] overflow-visible sm:w-[200px] md:w-[280px]"
+						src="/Buxton_ADR_Horizontal_-_Dark.png"
+						alt="Buxton ADR — Mediation · Arbitration · Med-Arb"
+						width="210"
+						class="w-[170px] sm:w-[210px]"
 					/>
 				</a>
 
@@ -109,393 +135,406 @@ const approach = [
 				<label
 					for="nav-toggle"
 					aria-label="Toggle navigation menu"
-					class="flex h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center md:hidden"
+					class="flex h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center text-white md:hidden"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
 					</svg>
 				</label>
 
-				<ul class="hidden w-full flex-col gap-x-6 gap-y-4 border-t border-tan-60 pt-4 font-alt text-sm font-medium uppercase tracking-[0.04em] text-navy/70 peer-checked:flex md:flex md:w-auto md:flex-row md:items-center md:border-0 md:pt-0">
-					{navLinks.map((link) => (
-						<li>
-							<a href={link.href} class="block transition-colors hover:text-satsuma">
-								{link.label}
-							</a>
-						</li>
-					))}
-				</ul>
+				<div class="hidden w-full basis-full flex-col gap-x-10 gap-y-4 border-t border-white/10 pb-3 pt-4 peer-checked:flex md:flex md:w-auto md:basis-auto md:flex-row md:items-center md:border-0 md:pb-0 md:pt-0">
+					<ul class="flex flex-col gap-x-10 gap-y-3 text-sm font-medium tracking-wide text-white/75 md:flex-row md:items-center">
+						{navLinks.map((link) => (
+							<li>
+								<a
+									href={link.href}
+									class="block border-b-2 border-transparent pb-0.5 transition-colors hover:border-appellate hover:text-white"
+								>{link.label}</a>
+							</li>
+						))}
+					</ul>
+					<a href="#book" class="btn-nav w-fit">Book a Call</a>
+				</div>
 			</nav>
-			<div class="h-[2px] w-full bg-accent"></div>
 		</header>
 
-		<main>
-			<!-- Hero -->
-			<section id="home" class="flex flex-wrap bg-navy text-center text-white">
-				<div class="flex flex-1 basis-full items-center justify-center px-6 py-20 lg:basis-1/2 lg:justify-end lg:py-28">
-					<div class="max-w-md lg:pr-12">
-						<h1 class="font-alt text-4xl font-medium uppercase leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-							Peter<br />Buxton<span class="tracking-normal">,</span> KC
-						</h1>
-						<p class="mt-3 font-alt text-xl tracking-wide sm:text-2xl">Mediator &amp; Arbitrator</p>
-						<p class="mt-4 text-balance text-tan">
-							Experienced. Neutral. Resolved.
-						</p>
-						<p class="mt-2 text-sm uppercase tracking-[0.2em] text-tan/70">
-							Lower Mainland, BC
-						</p>
-					</div>
-				</div>
-				<div class="basis-full lg:basis-1/2">
-					<img
-						src="/Peter_Image.jpg"
-						alt="Peter Buxton"
-						class="h-80 w-full object-cover object-top sm:h-[28rem] lg:h-full lg:min-h-[28rem]"
-					/>
-				</div>
-			</section>
+		<main id="top">
+			<!-- 01 — HERO -->
+			<section class="relative isolate overflow-visible text-white">
+				<!-- Base plane: Deep Teal with subtle depth -->
+				<div class="hero-depth absolute inset-0 -z-20"></div>
+				<!-- Right plane: distinct light panel behind the portrait (desktop) -->
+				<div class="absolute inset-y-0 right-0 -z-20 hidden bg-open-brief lg:block lg:w-[40%]"></div>
 
-			<!-- Intro -->
-			<section class="bg-white">
-				<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-					<p class="font-alt text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-						About Peter
-					</p>
-					<p class="mt-3 font-alt text-xs font-semibold uppercase tracking-[0.15em] text-logo-navy">
-						{['King\'s Counsel — 2015', 'Mediate BC Roster', 'Called to Bar — 1981'].map((item, i) => (
-							<>
-								{i > 0 && <span class="mx-2 text-accent">&middot;</span>}
-								{item}
-							</>
-						))}
-					</p>
-					<h2 class="mt-3 font-alt text-3xl font-semibold tracking-[0.02em] sm:text-4xl">
-						About Peter
-					</h2>
-					<hr class="my-5 h-[3px] w-[2.85em] border-0 bg-satsuma" />
-					<div class="grid gap-10 lg:grid-cols-2 lg:gap-16">
-						<p class="text-navy/80">
-							Called to the Bar in British Columbia in 1981, Peter Buxton spent
-							over 40 years as a trial lawyer before turning his focus to
-							mediation, arbitration, and Med-Arb.
+				<!-- Ghost badge geometry, clipped to the hero -->
+				<div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+					<!-- Oversized single hexagon behind the headline -->
+					<svg viewBox="0 0 174 200" class="absolute -left-24 top-4 h-[135%] w-auto opacity-[0.10] sm:-left-16" aria-hidden="true">
+						<polygon points={HEX} class="hex-line" stroke-width="1.1" vector-effect="non-scaling-stroke" />
+					</svg>
+					<!-- Overlapping badge trefoil, very faint, lower-left -->
+					<svg viewBox="-180 -105 360 316" class="absolute -bottom-16 left-[38%] hidden h-[85%] w-auto opacity-[0.06] lg:block" aria-hidden="true">
+						<polygon points="0,-100 86.6,-50 86.6,50 0,100 -86.6,50 -86.6,-50" class="hex-line" stroke-width="1.2" vector-effect="non-scaling-stroke" />
+						<polygon points="-86.6,6 0,56 0,156 -86.6,206 -173.2,156 -173.2,56" class="hex-line" stroke-width="1.2" vector-effect="non-scaling-stroke" />
+						<polygon points="86.6,6 173.2,56 173.2,156 86.6,206 0,156 0,56" class="hex-line" stroke-width="1.2" vector-effect="non-scaling-stroke" />
+					</svg>
+				</div>
+
+				<div class="mx-auto grid max-w-6xl grid-cols-1 items-stretch gap-0 px-6 lg:grid-cols-[1.55fr_1fr]">
+					<!-- Text plane (≈60%) -->
+					<div class="relative z-10 py-16 sm:py-24 lg:py-32 lg:pr-14">
+						<p class="section-label flex items-center gap-2 text-measured">
+							<span set:html={hexTiny} />01 — Peter Buxton, K.C.
 						</p>
-						<div class="space-y-4 text-navy/80">
-							<p>
-								Over four decades of practice, Peter appeared regularly in
-								personal injury, criminal, family, estate, corporate, and labour
-								matters — giving him a breadth of experience few neutrals can
-								match. He was appointed King's Counsel in 2015 and is a rostered
-								mediator with Mediate BC.
-							</p>
-							<p>
-								He draws on this experience as a mediator and arbitrator to
-								create and manage a process suited to the dispute at hand —
-								including Med-Arb, where mediation and arbitration are combined
-								into one. As a neutral, Peter brings even-handed and efficient
-								management of procedural matters, and a high measure of care
-								when helping parties reach a resolution.
-							</p>
+						<p class="eyebrow mt-5 text-white/55">Mediator · Arbitrator · Med-Arb Specialist</p>
+						<h1 class="hero-h1 mt-6">Forty-five years in the room.</h1>
+						<div class="mt-9 max-w-xl space-y-4 text-lg leading-relaxed text-white/85">
+							<p>Peter Buxton, K.C. knows what a judge will do. So do the lawyers who retain him.</p>
+							<p>Med-Arb delivers a binding decision in months, not years, with every chance to settle first.</p>
+						</div>
+						<div class="mt-11 flex flex-col gap-4 sm:flex-row sm:items-center">
+							<a href="#book" class="btn btn-primary">Book a Call</a>
+							<a href="tel:+16042505709" class="btn btn-ghost">604-250-5709</a>
 						</div>
 					</div>
 
-					<div class="mt-10 rounded-[0.625rem] bg-tan-40 p-8 sm:p-12">
-						<div class="grid gap-10 sm:grid-cols-2">
-							<div>
-								<h3 class="font-alt text-base font-semibold uppercase tracking-[0.1em]">Background</h3>
-								<ul class="mt-3 space-y-1 text-sm leading-relaxed text-navy/80">
-									<li><span class="font-semibold">1981</span> — Called to the Bar in British Columbia</li>
-									<li>40+ years as a trial lawyer</li>
-									<li>Personal injury, criminal, family, estate, corporate, and labour law</li>
-									<li><span class="font-semibold">2015</span> — Appointed King's Counsel</li>
-								</ul>
-							</div>
-							<div>
-								<h3 class="font-alt text-base font-semibold uppercase tracking-[0.1em]">Designations</h3>
-								<ul class="mt-3 space-y-1 text-sm leading-relaxed text-navy/80">
-									<li>King's Counsel (KC), 2015</li>
-									<li>Rostered Mediator, Mediate BC</li>
-									<li>Mediation, Arbitration &amp; Med-Arb practice</li>
-								</ul>
-							</div>
-						</div>
+					<!-- Portrait plane (≈40%) — large, editorial, overlaps next section -->
+					<div class="relative order-first min-h-[24rem] bg-open-brief sm:min-h-[30rem] lg:order-none lg:min-h-[38rem] lg:bg-transparent">
+						<img
+							src="/Peter_Image.jpg"
+							alt="Peter Buxton, K.C."
+							width="640"
+							height="800"
+							class="absolute inset-0 h-full w-full object-cover object-top lg:h-[calc(100%+5rem)]"
+						/>
 					</div>
 				</div>
 			</section>
 
-			<!-- Practice area sections: Med-Arb, Mediation, Arbitration -->
-			{practiceAreas.map((area) => (
-				<section id={area.id} class={`page-section ${area.id === 'mediation' ? 'bg-white' : 'bg-cream'}`}>
-					<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-						<div class="max-w-3xl">
-							{area.eyebrow && (
-								<p class="font-alt text-xs font-semibold uppercase tracking-[0.25em] text-satsuma">
-									{area.eyebrow}
-								</p>
-							)}
-							<h2 class="mt-3 font-alt text-3xl font-semibold tracking-[0.02em] sm:text-4xl">
-								{area.title}
-							</h2>
-							<hr class="my-5 h-[3px] w-[2.85em] border-0 bg-satsuma" />
-							<p class="max-w-prose text-balance text-lg text-navy/80">{area.intro}</p>
-						</div>
-						<ul class="mt-10 grid gap-x-10 gap-y-3 text-navy/80 sm:grid-cols-2">
-							{area.items.map((item) => (
-								<li class="flex gap-3 border-t border-tan-60 py-3">
-									<span class="font-alt text-satsuma">+</span>
-									<span>{item}</span>
-								</li>
-							))}
-						</ul>
-					</div>
-				</section>
-			))}
-
-			<!-- About -->
-			<section id="about" class="page-section bg-white">
-				<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-					<div class="max-w-3xl">
-						<p class="font-alt text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-							Approach
+			<!-- 02 — PRACTICE -->
+			<section id="practice" class="bg-clean-page">
+				<div class="mx-auto max-w-6xl px-6 pb-20 pt-28 sm:pb-24 sm:pt-36">
+					<div class="max-w-2xl">
+						<p class="section-label flex items-center gap-2 text-appellate">
+							<span set:html={hexTiny} />02 — Practice
 						</p>
-						<h2 class="mt-3 font-alt text-3xl font-semibold tracking-[0.02em] sm:text-4xl">Approach</h2>
-						<hr class="my-5 h-[3px] w-[2.85em] border-0 bg-satsuma" />
+						<h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+							Three ways Peter resolves a dispute.
+						</h2>
 					</div>
-					<div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-						{approach.map((item) => (
-							<div>
-								<h3 class="font-alt text-lg font-semibold tracking-wide">{item.heading}</h3>
-								<p class="mt-2 text-sm leading-relaxed text-navy/80">{item.description}</p>
+					<div class="mt-14 grid gap-6 lg:grid-cols-3 lg:items-start">
+						{practice.map((card) => (
+							<div
+								class={`relative flex h-full flex-col rounded-lg border border-slate-ink/10 bg-white p-8 ${
+									card.featured
+										? 'border-t-[3px] border-t-appellate shadow-xl sm:p-9 lg:-mt-6 lg:pb-10'
+										: 'shadow-sm'
+								}`}
+							>
+								{card.featured && (
+									<p class="eyebrow mb-3 flex items-center gap-2 text-appellate">
+										<span set:html={hexTiny} />Featured process
+									</p>
+								)}
+								<h3 class={`font-serif font-semibold text-slate-ink ${card.featured ? 'text-[1.75rem]' : 'text-xl'}`}>
+									{card.title}
+								</h3>
+								<div class={`mt-3 h-px ${card.featured ? 'w-16 bg-appellate' : 'w-12 bg-measured'}`}></div>
+								<p class="mt-5 flex-1 leading-relaxed text-slate-ink/75">{card.body}</p>
+								{card.featured && (
+									<a href="#med-arb" class="link-arrow mt-7 text-sm font-semibold text-appellate">
+										How Med-Arb works <span aria-hidden="true">&rarr;</span>
+									</a>
+								)}
 							</div>
 						))}
 					</div>
 				</div>
 			</section>
 
-			<!-- Fees -->
-			<section id="fees" class="page-section bg-cream">
-				<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-					<div class="max-w-3xl">
-						<p class="font-alt text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-							Fees
+			<!-- 03 — WHO HE WORKS WITH -->
+			<section class="bg-open-brief">
+				<div class="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+					<div class="max-w-2xl">
+						<p class="section-label flex items-center gap-2 text-appellate">
+							<span set:html={hexTiny} />03 — Who He Works With
 						</p>
-						<h2 class="mt-3 font-alt text-3xl font-semibold tracking-[0.02em] sm:text-4xl">Format &amp; Fees</h2>
-						<hr class="my-5 h-[3px] w-[2.85em] border-0 bg-satsuma" />
-						<p class="max-w-prose text-balance text-lg text-navy/80">
-							Available in-person, virtual, or hybrid. Fees are charged on a
-							flexible, hourly basis according to the number of parties and
-							the complexity of the dispute.
-						</p>
+						<h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+							Counsel and parties who need a decision.
+						</h2>
 					</div>
+					<div class="mt-14 grid gap-6 md:grid-cols-2">
+						{worksWith.map((panel) => (
+							<div class="border-l-[3px] border-appellate bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
+								<h3 class="font-serif text-xl font-semibold text-slate-ink">{panel.title}</h3>
+								<p class="mt-3 leading-relaxed text-slate-ink/75">{panel.body}</p>
+							</div>
+						))}
+					</div>
+				</div>
+				<!-- Hexagon divider between informational sections -->
+				<div class="hex-divider pb-4" aria-hidden="true">
+					<span class="rule rule-l"></span>
+					<span set:html={hexDiv} />
+					<span class="rule rule-r"></span>
 				</div>
 			</section>
 
-			<!-- Booking -->
-			<section id="booking" class="page-section bg-white">
-				<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-					<div class="max-w-3xl">
-						<p class="font-alt text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-							Availability
-						</p>
-						<h2 class="mt-3 font-alt text-3xl font-semibold tracking-[0.02em] sm:text-4xl">Check Availability</h2>
-						<hr class="my-5 h-[3px] w-[2.85em] border-0 bg-satsuma" />
-						<p class="max-w-prose text-balance text-lg text-navy/80">
-							Review available dates below and submit a booking request. Peter will confirm your date directly.
-						</p>
-					</div>
-
-					<div class="mt-10 grid gap-12 lg:grid-cols-2 lg:gap-16">
-
-						<!-- Custom Mon–Fri calendar -->
+			<!-- 04 — CREDENTIALS -->
+			<section id="about" class="bg-clean-page">
+				<div class="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+					<div class="grid gap-14 lg:grid-cols-[1fr_0.85fr] lg:gap-20">
 						<div>
-							<!-- Nav header -->
-							<div class="mb-4 flex items-center justify-between">
-								<button id="cal-prev" class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-navy/20 font-alt text-lg font-medium text-navy/60 transition-colors hover:border-accent hover:text-accent">&#8249;</button>
-								<span id="cal-title" class="font-alt text-lg font-semibold tracking-wide text-navy"></span>
-								<button id="cal-next" class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-navy/20 font-alt text-lg font-medium text-navy/60 transition-colors hover:border-accent hover:text-accent">&#8250;</button>
+							<p class="section-label flex items-center gap-2 text-appellate">
+								<span set:html={hexTiny} />04 — Credentials
+							</p>
+							<h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">Why Peter.</h2>
+							<div class="mt-6 space-y-5 leading-relaxed text-slate-ink/80">
+								<p>
+									Peter Buxton has been a trial lawyer in BC since 1981. He has appeared in Provincial Court,
+									the BC Supreme Court, and the BC Court of Appeal across personal injury, criminal, family,
+									estate, corporate, and labour matters. He achieved King’s Counsel in 2015.
+								</p>
+								<p>
+									He holds a Harvard Law School certification in mediation and completed his Med-Arb specialist
+									training through CLEBC under Carol Hickman, K.C. and Arlene Henry, K.C., two of the foremost
+									Med-Arb practitioners in Canada. He is a rostered member of Mediate BC, a practicing member of
+									the Law Society of British Columbia, and a current member of the Canadian Bar Association, the
+									Surrey Bar Association, and the New Westminster Bar Association.
+								</p>
 							</div>
-							<!-- Day-of-week headers -->
-							<div class="mb-1 grid grid-cols-5 gap-1">
-								{['Mon','Tue','Wed','Thu','Fri'].map(d => (
-									<div class="py-2 text-center font-alt text-xs font-semibold uppercase tracking-wider text-navy/40">{d}</div>
+							<div class="mt-8 flex flex-wrap gap-3">
+								{credentialTags.map((tag) => (
+									<span class="rounded-full border border-slate-ink/15 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-slate-ink/80">
+										{tag}
+									</span>
 								))}
 							</div>
-							<!-- Grid (populated by JS) -->
+						</div>
+						<figure class="relative isolate self-start overflow-hidden border-l-[3px] border-appellate bg-white p-8 shadow-sm sm:p-10 lg:sticky lg:top-24">
+							<!-- Geometric linework behind the pull quote -->
+							<svg viewBox="0 0 174 200" class="pointer-events-none absolute -right-10 -top-8 -z-10 h-56 w-auto opacity-[0.07]" aria-hidden="true">
+								<polygon points={HEX} class="hex-line-red" stroke-width="1.4" vector-effect="non-scaling-stroke" />
+							</svg>
+							<span class="font-serif text-5xl leading-none text-appellate" aria-hidden="true">&ldquo;</span>
+							<blockquote class="-mt-4 font-serif text-xl italic leading-relaxed text-slate-ink sm:text-2xl">
+								It’s not about the mediator. It’s about asking the right questions, and giving the person
+								across the table the confidence to tell you where they actually stand.
+							</blockquote>
+							<figcaption class="eyebrow mt-6 text-measured">Peter Buxton, K.C.</figcaption>
+						</figure>
+					</div>
+				</div>
+			</section>
+
+			<!-- 05 — TESTIMONIALS -->
+			<section class="relative isolate overflow-hidden bg-deep-teal text-white">
+				<!-- Faint badge geometry behind testimonials -->
+				<svg viewBox="0 0 174 200" class="pointer-events-none absolute -right-16 top-8 -z-10 h-[120%] w-auto opacity-[0.05]" aria-hidden="true">
+					<polygon points={HEX} class="hex-line" stroke-width="1.2" vector-effect="non-scaling-stroke" />
+				</svg>
+				<div class="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+					<div class="max-w-2xl">
+						<p class="section-label flex items-center gap-2 text-measured">
+							<span set:html={hexTiny} />05 — Testimonials
+						</p>
+						<h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+							What counsel say.
+						</h2>
+					</div>
+					<div class="mt-14 grid gap-6 md:grid-cols-3">
+						{testimonials.map((t) => (
+							<figure class="flex flex-col rounded-lg bg-white/5 p-8 ring-1 ring-white/10">
+								<div class="font-serif text-5xl leading-none text-appellate" aria-hidden="true">&ldquo;</div>
+								<blockquote class="mt-3 flex-1 leading-relaxed text-white/80">
+									Placeholder testimonial. Real quotes from counsel and parties will be added here once
+									approved for use. This copy holds the layout and typographic rhythm of the final quote.
+								</blockquote>
+								<figcaption class="mt-6 border-t border-white/15 pt-4">
+									<p class="font-semibold text-white">{t.role}</p>
+									<p class="text-sm text-white/60">{t.firm}</p>
+								</figcaption>
+							</figure>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- 06 — MED-ARB FAQ -->
+			<section id="med-arb" class="bg-open-brief">
+				<div class="mx-auto max-w-4xl px-6 py-24 sm:py-32">
+					<div class="max-w-2xl">
+						<p class="section-label flex items-center gap-2 text-appellate">
+							<span set:html={hexTiny} />06 — Med-Arb FAQ
+						</p>
+						<h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+							Understanding Med-Arb
+						</h2>
+						<p class="mt-5 leading-relaxed text-slate-ink/75">
+							Med-Arb is still unfamiliar to many lawyers and parties outside the field. These are the
+							questions Peter is most often asked on an intake call.
+						</p>
+					</div>
+					<div class="mt-12 divide-y divide-slate-ink/10 border-y border-slate-ink/10">
+						{faqs.map((faq) => (
+							<details class="faq group">
+								<summary class="flex items-center justify-between gap-6 py-5">
+									<span class="font-serif text-lg font-semibold text-slate-ink">{faq.q}</span>
+									<span class="chev flex h-6 w-6 flex-shrink-0 items-center justify-center text-2xl font-light leading-none text-appellate">+</span>
+								</summary>
+								<p class="pb-6 pr-10 leading-relaxed text-slate-ink/75">{faq.a}</p>
+							</details>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- 07 — BOOK A CALL -->
+			<section id="book" class="bg-clean-page">
+				<div class="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+					<div class="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+						<div>
+							<p class="section-label flex items-center gap-2 text-appellate">
+								<span set:html={hexTiny} />07 — Book a Call
+							</p>
+							<h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+								Start the Conversation
+							</h2>
+							<p class="mt-5 leading-relaxed text-slate-ink/80">
+								Peter is available for a complimentary 20-minute intake call to discuss the file, confirm
+								whether the process is a fit, and outline likely fees and timelines.
+							</p>
+
+							<dl class="mt-8 space-y-4 text-slate-ink/85">
+								<div class="flex gap-3">
+									<dt class="w-20 flex-shrink-0 text-sm font-semibold uppercase tracking-wide text-slate-ink/50">Direct</dt>
+									<dd><a href="tel:+16042505709" class="font-medium text-measured hover:text-slate-ink">604-250-5709</a></dd>
+								</div>
+								<div class="flex gap-3">
+									<dt class="w-20 flex-shrink-0 text-sm font-semibold uppercase tracking-wide text-slate-ink/50">Email</dt>
+									<dd><a href="mailto:peter@buxtonmediation.ca" class="font-medium text-measured hover:text-slate-ink">peter@buxtonmediation.ca</a></dd>
+								</div>
+								<div class="flex gap-3">
+									<dt class="w-20 flex-shrink-0 text-sm font-semibold uppercase tracking-wide text-slate-ink/50">LinkedIn</dt>
+									<dd><a href="https://linkedin.com/in/pbuxton" target="_blank" rel="noopener" class="font-medium text-measured hover:text-slate-ink">linkedin.com/in/pbuxton</a></dd>
+								</div>
+							</dl>
+
+							<div class="mt-8 rounded-lg border border-slate-ink/10 bg-open-brief p-6">
+								<p class="text-sm leading-relaxed text-slate-ink/75">
+									Scheduling and logistics are managed by Peter’s coordination team. For scheduling support:
+									<a href="tel:+16044922690" class="font-medium text-measured hover:text-slate-ink">604-492-2690</a>
+									or
+									<a href="mailto:info@buxtonmediation.ca" class="font-medium text-measured hover:text-slate-ink">info@buxtonmediation.ca</a>.
+								</p>
+							</div>
+						</div>
+
+						<div>
+							<!-- Availability calendar (live Google Calendar integration) -->
+							<div class="mb-4 flex items-center justify-between">
+								<button id="cal-prev" class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-slate-ink/20 text-lg text-slate-ink/60 transition-colors hover:border-appellate hover:text-appellate">&#8249;</button>
+								<span id="cal-title" class="font-serif text-lg font-semibold text-slate-ink"></span>
+								<button id="cal-next" class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-slate-ink/20 text-lg text-slate-ink/60 transition-colors hover:border-appellate hover:text-appellate">&#8250;</button>
+							</div>
+							<div class="mb-1 grid grid-cols-5 gap-1">
+								{['Mon','Tue','Wed','Thu','Fri'].map(d => (
+									<div class="py-2 text-center text-xs font-semibold uppercase tracking-wider text-slate-ink/40">{d}</div>
+								))}
+							</div>
 							<div id="cal-grid"></div>
-							<!-- Legend -->
-							<div class="mt-5 flex flex-wrap gap-6 text-sm text-navy/80">
+							<div class="mt-5 flex flex-wrap gap-6 text-sm text-slate-ink/75">
 								<div class="flex items-center gap-2">
-									<span class="inline-block h-3 w-3 rounded-full" style="background:#23364c;"></span>
+									<span class="inline-block h-3 w-3 rounded-full" style="background:#1A2E3B;"></span>
 									<span>Booked</span>
 								</div>
 								<div class="flex items-center gap-2">
-									<span class="inline-block h-3 w-3 rounded-full" style="background:#E8652A;"></span>
+									<span class="inline-block h-3 w-3 rounded-full" style="background:#7A1F33;"></span>
 									<span>On Hold</span>
 								</div>
 							</div>
-						</div>
 
-						<!-- Booking request form -->
-						<div>
-							<h3 class="font-alt text-lg font-semibold tracking-wide">Booking Request</h3>
-							<p class="mt-1 text-sm text-navy/60">Submit your preferred date and we'll confirm availability.</p>
-
+							<!-- Booking request form -->
 							<form
 								id="booking-form"
 								action="https://formspree.io/f/xpqgqygw"
 								method="POST"
-								class="mt-6 grid gap-6"
+								class="mt-10 grid gap-6"
 							>
 								<div class="grid gap-6 sm:grid-cols-2">
 									<div>
-										<label for="full-name" class="block text-sm text-navy/60">Full Name <span class="text-accent">*</span></label>
-										<input
-											type="text"
-											id="full-name"
-											name="full_name"
-											required
-											class="mt-2 block w-full border-0 border-b border-navy/25 bg-transparent px-0 py-2 text-navy placeholder-navy/30 focus:border-accent focus:outline-none focus:ring-0"
-										/>
+										<label for="full-name" class="block text-sm text-slate-ink/60">Full Name <span class="text-appellate">*</span></label>
+										<input type="text" id="full-name" name="full_name" required class="mt-2 block w-full border-0 border-b border-slate-ink/25 bg-transparent px-0 py-2 text-slate-ink focus:border-appellate focus:outline-none focus:ring-0" />
 									</div>
 									<div>
-										<label for="book-email" class="block text-sm text-navy/60">Email <span class="text-accent">*</span></label>
-										<input
-											type="email"
-											id="book-email"
-											name="email"
-											required
-											class="mt-2 block w-full border-0 border-b border-navy/25 bg-transparent px-0 py-2 text-navy placeholder-navy/30 focus:border-accent focus:outline-none focus:ring-0"
-										/>
+										<label for="book-email" class="block text-sm text-slate-ink/60">Email <span class="text-appellate">*</span></label>
+										<input type="email" id="book-email" name="email" required class="mt-2 block w-full border-0 border-b border-slate-ink/25 bg-transparent px-0 py-2 text-slate-ink focus:border-appellate focus:outline-none focus:ring-0" />
 									</div>
 								</div>
 								<div class="grid gap-6 sm:grid-cols-2">
 									<div>
-										<label for="telephone" class="block text-sm text-navy/60">Telephone Number <span class="text-accent">*</span></label>
-										<input
-											type="tel"
-											id="telephone"
-											name="telephone"
-											required
-											class="mt-2 block w-full border-0 border-b border-navy/25 bg-transparent px-0 py-2 text-navy placeholder-navy/30 focus:border-accent focus:outline-none focus:ring-0"
-										/>
+										<label for="telephone" class="block text-sm text-slate-ink/60">Telephone Number <span class="text-appellate">*</span></label>
+										<input type="tel" id="telephone" name="telephone" required class="mt-2 block w-full border-0 border-b border-slate-ink/25 bg-transparent px-0 py-2 text-slate-ink focus:border-appellate focus:outline-none focus:ring-0" />
 									</div>
 									<div>
-										<label for="firm" class="block text-sm text-navy/60">Firm / Organization</label>
-										<input
-											type="text"
-											id="firm"
-											name="firm"
-											class="mt-2 block w-full border-0 border-b border-navy/25 bg-transparent px-0 py-2 text-navy placeholder-navy/30 focus:border-accent focus:outline-none focus:ring-0"
-										/>
+										<label for="firm" class="block text-sm text-slate-ink/60">Firm / Organization</label>
+										<input type="text" id="firm" name="firm" class="mt-2 block w-full border-0 border-b border-slate-ink/25 bg-transparent px-0 py-2 text-slate-ink focus:border-appellate focus:outline-none focus:ring-0" />
 									</div>
 								</div>
 								<div class="grid gap-6 sm:grid-cols-2">
 									<div>
-										<label for="requested-date" class="block text-sm text-navy/60">Requested Date <span class="text-accent">*</span></label>
-										<input
-											type="date"
-											id="requested-date"
-											name="requested_date"
-											required
-											class="mt-2 block w-full border-0 border-b border-navy/25 bg-transparent px-0 py-2 text-navy focus:border-accent focus:outline-none focus:ring-0"
-										/>
+										<label for="requested-date" class="block text-sm text-slate-ink/60">Requested Date <span class="text-appellate">*</span></label>
+										<input type="date" id="requested-date" name="requested_date" required class="mt-2 block w-full border-0 border-b border-slate-ink/25 bg-transparent px-0 py-2 text-slate-ink focus:border-appellate focus:outline-none focus:ring-0" />
 									</div>
 									<div>
-										<label for="style-of-cause" class="block text-sm text-navy/60">Full Style of Cause <span class="text-accent">*</span></label>
-										<input
-											type="text"
-											id="style-of-cause"
-											name="style_of_cause"
-											required
-											class="mt-2 block w-full border-0 border-b border-navy/25 bg-transparent px-0 py-2 text-navy placeholder-navy/30 focus:border-accent focus:outline-none focus:ring-0"
-										/>
+										<label for="style-of-cause" class="block text-sm text-slate-ink/60">Full Style of Cause <span class="text-appellate">*</span></label>
+										<input type="text" id="style-of-cause" name="style_of_cause" required class="mt-2 block w-full border-0 border-b border-slate-ink/25 bg-transparent px-0 py-2 text-slate-ink focus:border-appellate focus:outline-none focus:ring-0" />
 									</div>
 								</div>
 								<div>
-									<label for="notes" class="block text-sm text-navy/60">Notes</label>
-									<textarea
-										id="notes"
-										name="notes"
-										rows="4"
-										placeholder="Any additional information about your mediation request"
-										class="mt-2 block w-full border-0 border-b border-navy/25 bg-transparent px-0 py-2 text-navy placeholder-navy/30 focus:border-accent focus:outline-none focus:ring-0"
-									></textarea>
+									<label for="notes" class="block text-sm text-slate-ink/60">Notes</label>
+									<textarea id="notes" name="notes" rows="3" placeholder="Any additional information about your request" class="mt-2 block w-full border-0 border-b border-slate-ink/25 bg-transparent px-0 py-2 text-slate-ink placeholder-slate-ink/30 focus:border-appellate focus:outline-none focus:ring-0"></textarea>
 								</div>
 								<input type="hidden" name="_subject" value="New Booking Request — Buxton ADR" />
-								<button
-									type="submit"
-									class="w-fit rounded-[5px] bg-logo-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent"
-								>
-									Submit Request
-								</button>
+								<button type="submit" class="btn btn-primary w-fit">Book a Call</button>
 							</form>
 
-							<!-- Success message (hidden by default) -->
-							<div id="booking-success" class="hidden mt-6 rounded-[0.625rem] border border-navy/20 bg-cream p-6">
-								<p class="font-alt text-base font-semibold text-navy">Request received.</p>
-								<p class="mt-1 text-sm text-navy/80">Thank you — Peter will be in touch shortly to confirm your date.</p>
+							<div id="booking-success" class="hidden mt-6 rounded-lg border border-slate-ink/15 bg-open-brief p-6">
+								<p class="font-serif text-base font-semibold text-slate-ink">Request received.</p>
+								<p class="mt-1 text-sm text-slate-ink/75">Thank you — Peter will be in touch shortly to confirm your date.</p>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-
-			<!-- Contact -->
-			<section id="contact" class="page-section bg-navy text-white">
-				<div class="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-					<div class="max-w-2xl">
-						<h2 class="font-alt text-3xl font-semibold tracking-[0.02em] sm:text-4xl">Contact</h2>
-						<hr class="my-5 h-[3px] w-[2.85em] border-0 bg-satsuma" />
-						<p class="text-lg text-tan">
-							Ready to discuss your dispute or schedule a consultation? Send a
-							message below and you'll hear back shortly.
-						</p>
-					</div>
-					<form class="mt-10 grid max-w-xl gap-6">
-						<div class="grid gap-6 sm:grid-cols-2">
-							<div>
-								<label for="name" class="block text-sm text-tan">Name</label>
-								<input
-									type="text"
-									id="name"
-									name="name"
-									class="mt-2 block w-full border-0 border-b border-white/30 bg-transparent px-0 py-2 text-white placeholder-white/40 focus:border-satsuma focus:outline-none focus:ring-0"
-								/>
-							</div>
-							<div>
-								<label for="email" class="block text-sm text-tan">Email</label>
-								<input
-									type="email"
-									id="email"
-									name="email"
-									class="mt-2 block w-full border-0 border-b border-white/30 bg-transparent px-0 py-2 text-white placeholder-white/40 focus:border-satsuma focus:outline-none focus:ring-0"
-								/>
-							</div>
-						</div>
-						<div>
-							<label for="message" class="block text-sm text-tan">Message</label>
-							<textarea
-								id="message"
-								name="message"
-								rows="5"
-								class="mt-2 block w-full border-0 border-b border-white/30 bg-transparent px-0 py-2 text-white placeholder-white/40 focus:border-satsuma focus:outline-none focus:ring-0"
-							></textarea>
-						</div>
-						<button
-							type="submit"
-							class="w-fit rounded-[5px] bg-satsuma px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-navy"
-						>
-							Send message
-						</button>
-					</form>
 				</div>
 			</section>
 		</main>
 
-		<footer class="bg-tan-05">
-			<div class="mx-auto max-w-6xl px-6 py-8">
-				<p class="text-sm text-navy/50">
-					&copy; {new Date().getFullYear()} Buxton Mediation.
-				</p>
+		<footer class="bg-open-brief">
+			<div class="mx-auto max-w-6xl px-6 py-14">
+				<div class="flex flex-col items-start gap-10 md:flex-row md:justify-between">
+					<div class="max-w-md">
+						<img src="/Buxton_ADR_Badge.png" alt="Buxton ADR" width="150" class="w-[130px]" />
+						<p class="mt-5 font-serif text-lg font-semibold text-slate-ink">Peter Buxton, K.C.</p>
+						<p class="text-sm text-slate-ink/70">Mediator · Arbitrator · Med-Arb Specialist</p>
+						<p class="mt-3 text-sm text-slate-ink/70">
+							Member, Mediate BC Civil Roster · Law Society of British Columbia
+						</p>
+						<p class="mt-3 text-sm text-slate-ink/70">
+							<a href="tel:+16042505709" class="text-measured hover:text-slate-ink">604-250-5709</a>
+							<span class="mx-1 text-slate-ink/30">|</span>
+							<a href="mailto:peter@buxtonmediation.ca" class="text-measured hover:text-slate-ink">peter@buxtonmediation.ca</a>
+						</p>
+					</div>
+					<nav class="flex flex-col gap-3 text-sm font-medium text-slate-ink/80">
+						<a href="#practice" class="hover:text-appellate">Practice</a>
+						<a href="#about" class="hover:text-appellate">About</a>
+						<a href="#med-arb" class="hover:text-appellate">Med-Arb</a>
+						<a href="#book" class="hover:text-appellate">Book a Call</a>
+					</nav>
+				</div>
+				<div class="mt-10 border-t border-slate-ink/10 pt-6 text-xs text-slate-ink/50">
+					&copy; {new Date().getFullYear()} Peter Buxton K.C. Personal Law Corporation | buxtonadr.ca
+				</div>
 			</div>
 		</footer>
 
@@ -547,26 +586,25 @@ const approach = [
 						var isPast = dateStr < todayStr;
 						var isToday = dateStr === todayStr;
 						var bg, color, weight, opacity;
-						if (type === 'booked')       { bg = '#23364c'; color = '#fff'; weight = '600'; opacity = isPast ? '0.45' : '1'; }
-						else if (type === 'on-hold') { bg = '#E8652A'; color = '#fff'; weight = '600'; opacity = isPast ? '0.45' : '1'; }
-						else { bg = '#fafafa'; color = isPast ? '#bbb' : '#23364c'; weight = '400'; opacity = '1'; }
-						var border = isToday ? '2px solid #E8652A' : '1px solid #e8e3dd';
-						html += '<div style="background:' + bg + ';color:' + color + ';font-weight:' + weight + ';opacity:' + opacity + ';border:' + border + ';border-radius:5px;padding:10px 4px;text-align:center;font-size:0.875rem;">' + d + '</div>';
+						if (type === 'booked')       { bg = '#1A2E3B'; color = '#fff'; weight = '600'; opacity = isPast ? '0.45' : '1'; }
+						else if (type === 'on-hold') { bg = '#7A1F33'; color = '#fff'; weight = '600'; opacity = isPast ? '0.45' : '1'; }
+						else { bg = '#ffffff'; color = isPast ? '#b6c0c6' : '#1A2E3B'; weight = '400'; opacity = '1'; }
+						var border = isToday ? '2px solid #7A1F33' : '1px solid #dbe4e9';
+						html += '<div style="background:' + bg + ';color:' + color + ';font-weight:' + weight + ';opacity:' + opacity + ';border:' + border + ';border-radius:6px;padding:10px 4px;text-align:center;font-size:0.875rem;">' + d + '</div>';
 					});
 					html += '</div>';
 				});
 				grid.innerHTML = html;
 			}
 
-			// Show loading state, fetch live events, then render
 			var grid = document.getElementById('cal-grid');
-			if (grid) grid.innerHTML = '<p style="color:#23364c;opacity:0.5;font-size:0.875rem;padding:1rem 0;">Loading availability…</p>';
-			render(); // render empty calendar immediately so nav/headers show
+			if (grid) grid.innerHTML = '<p style="color:#1A2E3B;opacity:0.5;font-size:0.875rem;padding:1rem 0;">Loading availability…</p>';
+			render();
 
 			fetch('/api/calendar')
 				.then(function(r) { return r.ok ? r.json() : Promise.reject(r.status); })
 				.then(function(data) { eventMap = buildEventMap(data.events); render(); })
-				.catch(function() { render(); }); // render without events on error
+				.catch(function() { render(); });
 
 			var prev = document.getElementById('cal-prev');
 			var next = document.getElementById('cal-next');
@@ -591,14 +629,14 @@ const approach = [
 						form.classList.add('hidden');
 						success.classList.remove('hidden');
 					} else {
-						alert('Something went wrong — please try again or email info@pacifictelecomconsulting.com directly.');
+						alert('Something went wrong — please try again or email info@buxtonmediation.ca directly.');
 					}
 				});
 			}
 		</script>
-	<script is:inline>
-		if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-		window.scrollTo(0, 0);
-	</script>
+		<script is:inline>
+			if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+			window.scrollTo(0, 0);
+		</script>
 	</body>
 </html>
