@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 # wrangler
 .wrangler/
+
+# Local Buxton design reference files
+Brand Directions — Peter Buxton ADR.pdf
+Buxton_ADR_WireframeV2 (1).docx
