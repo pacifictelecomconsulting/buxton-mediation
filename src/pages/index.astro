@@ -16,36 +16,36 @@ const practice = [
 	{
 		title: 'Med-Arb',
 		featured: true,
-		body: 'The process begins as a mediation. If the parties reach agreement, the file closes. If they don’t, Peter moves seamlessly into the role of arbitrator and delivers a binding decision. One neutral. One process. Resolution guaranteed.',
+		body: 'The process begins as a mediation. If the parties reach an agreement, the file closes. If they don’t, Peter moves seamlessly into the role of arbitrator and delivers a binding decision. One neutral. One process. Resolution assured.',
 	},
 	{
 		title: 'Arbitration',
 		featured: false,
-		body: 'When a decision needs to be made, Peter makes it. As a former trial lawyer with over four decades of courtroom experience, he understands what evidence means, how findings of fact are made, and what a written decision needs to hold up.',
+		body: 'When a decision needs to be made, Peter makes it. As a trial lawyer with over four decades of courtroom experience, he understands what evidence means, how findings of fact are made, and what a written decision needs to hold up.',
 	},
 ];
 
 const worksWith = [
 	{
-		title: 'Law Firms & Solo Practitioners',
+		title: 'Law Firms and Solo Practitioners',
 		body: 'Personal injury, estate, and commercial matters that have stalled or are too complex for a standard mediation. Peter gives counsel the read on the file they need to advise their clients confidently.',
 	},
 	{
-		title: 'Estate & Wills Variation',
+		title: 'Estate and Wills Variation',
 		body: 'Files where family relationships are strained, timelines are urgent, and a court process would cost more than the estate can bear. A binding outcome, with privacy protected throughout.',
 	},
 	{
-		title: 'Corporate & Commercial Parties',
+		title: 'Corporate and Commercial Parties',
 		body: 'Shareholder, partnership, and contractual disputes where a binding outcome matters and the cost of full-blown litigation is disproportionate to the amount at stake.',
 	},
 	{
 		title: 'Sports Organizations',
-		body: 'Membership, eligibility, and governance decisions that need to be made quickly, fairly, and by someone with real governance experience. Peter has served at every level of organized sport in Canada.',
+		body: 'Membership, eligibility, sanctions, and governance decisions that need to be made quickly, fairly, and by someone with real governance experience. Peter has served at every level of organized sport in Canada.',
 	},
 ];
 
 const credentialTags = [
-	'K.C.',
+	'KC',
 	'Harvard Certified',
 	'Med-Arb Specialist',
 	'Mediate BC Civil Roster',
@@ -90,7 +90,7 @@ const faqs = [
 	},
 	{
 		q: 'How does Peter handle the pre-mediation process?',
-		a: 'Peter conducts teleconferences with counsel before every file begins. This gives him a clear picture of what is and is not in the brief, and allows him to understand the real issues before anyone is in the room together.',
+		a: 'Peter conducts teleconferences with counsel before every file begins. This gives him a clear picture of what is and is not in the mediation brief, and allows him to understand the real issues before anyone is in the room together.',
 	},
 ];
 
@@ -119,15 +119,15 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 	</head>
 	<body class="bg-clean-page font-sans text-slate-ink antialiased">
 		<!-- Header / Nav -->
-		<header class="sticky top-0 z-50 border-b border-white/10 bg-slate-ink/95 backdrop-blur">
-			<nav class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-1.5">
+		<header class="sticky top-0 z-50 border-b border-measured/40 bg-clean-page">
+			<nav class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-2.5">
 				<a href="#top" class="flex items-center" aria-label="Buxton ADR home">
 					<img
-	src="/Buxton_ADR_Horizontal_-_Dark.png"
+	src="/buxton-adr-horizontal-light.png"
 	alt="Buxton ADR — Mediation · Arbitration · Med-Arb"
-	width="240"
-	height="72"
-	class="w-[190px] transition-transform duration-300 sm:w-[230px]"
+	width="1000"
+	height="400"
+	class="h-auto w-[130px] object-contain transition-transform duration-300 sm:w-[220px]"
 />
 				</a>
 
@@ -136,20 +136,20 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 				<label
 					for="nav-toggle"
 					aria-label="Toggle navigation menu"
-					class="flex h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center text-white md:hidden"
+					class="flex h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center text-slate-ink md:hidden"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
 					</svg>
 				</label>
 
-				<div class="hidden w-full basis-full flex-col gap-x-10 gap-y-4 border-t border-white/10 pb-3 pt-4 peer-checked:flex md:flex md:w-auto md:basis-auto md:flex-row md:items-center md:border-0 md:pb-0 md:pt-0">
-					<ul class="flex flex-col gap-x-10 gap-y-3 text-sm font-medium tracking-wide text-white/75 md:flex-row md:items-center">
+				<div class="hidden w-full basis-full flex-col gap-x-10 gap-y-4 border-t border-slate-ink/10 pb-3 pt-4 peer-checked:flex md:flex md:w-auto md:basis-auto md:flex-row md:items-center md:border-0 md:pb-0 md:pt-0 md:mt-2">
+					<ul class="flex flex-col gap-x-10 gap-y-3 text-sm font-medium tracking-wide text-slate-ink/80 md:flex-row md:items-center">
 						{navLinks.map((link) => (
 							<li>
 								<a
 									href={link.href}
-									class="block border-b-2 border-transparent pb-0.5 transition-colors hover:border-appellate hover:text-white"
+									class="block border-b-2 border-transparent pb-0.5 transition-colors hover:border-appellate hover:text-appellate"
 								>{link.label}</a>
 							</li>
 						))}
@@ -181,29 +181,29 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 					</svg>
 				</div>
 
-				<div class="grid w-full grid-cols-1 items-stretch gap-0 lg:grid-cols-[2.8fr_2.2fr]">
+				<div class="grid w-full grid-cols-1 items-stretch gap-0 lg:grid-cols-[3.2fr_2fr]">
 					<!-- Text plane (≈60%) -->
 					<div class="relative z-10 ml-auto w-full max-w-[46rem] px-6 py-12 sm:py-20 lg:px-12 lg:py-24">
 						<p class="section-label flex items-center gap-2 text-measured">
 							<span set:html={hexTiny} />01 — Peter Buxton, K.C.
 						</p>
 						<p class="eyebrow mt-5 text-white/55">Mediator · Arbitrator · Med-Arb Specialist</p>
-						<div class="relative mt-6">
+						<div class="relative mt-12">
 	<div class="absolute -left-6 top-3 hidden h-[82%] w-px bg-appellate-red/70 lg:block"></div>
-	<h1 class="hero-h1 mt-6">Forty-five years in the room.</h1>
+	<h1 class="hero-h1">Forty-five years in the room.</h1>
 </div>
 						<div class="mt-8 max-w-lg space-y-4 text-lg leading-relaxed text-white/85">
-							<p>Peter Buxton, K.C. knows what a judge will do. So do the lawyers who retain him.</p>
+							<p>Peter Buxton KC knows what a judge will do. So do the lawyers who retain him.</p>
 							<p>Med-Arb delivers a binding decision in months, not years, with every chance to settle first.</p>
 						</div>
-						<div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+						<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
 							<a href="#book" class="btn btn-primary">Book a Call</a>
 							<a href="tel:+16042505709" class="btn btn-ghost">604-250-5709</a>
 						</div>
 					</div>
 
 					<!-- Portrait plane -->
-<div class="relative z-20 order-first min-h-[24rem] overflow-hidden bg-slate-ink sm:min-h-[30rem] lg:order-none lg:min-h-[40rem] lg:-mb-8">
+<div class="relative z-20 order-first min-h-[24rem] overflow-hidden bg-slate-ink sm:min-h-[30rem] lg:order-none lg:min-h-[40rem] lg:my-8 lg:mr-8">
 	<img
 		src="/Peter_Image.jpg"
 		alt="Peter Buxton, K.C."
@@ -233,16 +233,16 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 							<span set:html={hexTiny} />02 — Practice
 						</p>
 						<h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
-							Three ways Peter resolves a dispute.
+							Practice
 						</h2>
 					</div>
-					<div class="mt-14 grid gap-6 lg:grid-cols-3 lg:items-start">
+					<div class="mt-20 grid gap-6 lg:grid-cols-3 lg:items-start">
 						{practice.map((card) => (
 							<div
-								class={`relative flex h-full flex-col rounded-lg border border-slate-ink/10 bg-white p-8 ${
+								class={`relative flex h-full flex-col rounded border border-slate-ink/10 bg-white p-9 ${
 									card.featured
-										? 'border-t-[3px] border-t-appellate shadow-xl sm:p-9 lg:-mt-6 lg:pb-10'
-										: 'shadow-sm'
+										? 'border-t-[3px] border-t-appellate sm:p-10 lg:-mt-8 lg:pb-12'
+										: ''
 								}`}
 							>
 								{card.featured && (
@@ -274,8 +274,12 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 							<span set:html={hexTiny} />03 — Who He Works With
 						</p>
 						<h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
-							Counsel and parties who need a decision.
+							Who He Works With
 						</h2>
+						<p class="mt-5 leading-relaxed text-slate-ink/75">
+							Peter works primarily with lawyers and law firms who need a neutral they can trust to run a
+							professional process and, when asked, give an honest read on the file.
+						</p>
 					</div>
 					<div class="mt-14 grid gap-6 md:grid-cols-2">
 						{worksWith.map((panel) => (
@@ -307,14 +311,15 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 								<p>
 									Peter Buxton has been a trial lawyer in BC since 1981. He has appeared in Provincial Court,
 									the BC Supreme Court, and the BC Court of Appeal across personal injury, criminal, family,
-									estate, corporate, and labour matters. He achieved King’s Counsel in 2015.
+									estate, corporate, and labour matters. He was appointed Queen’s Counsel (now King’s Counsel)
+									in 2015. He holds a Harvard Law School certification in mediation and completed his Med-Arb
+									specialist training through The Continuing Legal Education Society of B.C.
 								</p>
 								<p>
-									He holds a Harvard Law School certification in mediation and completed his Med-Arb specialist
-									training through CLEBC under Carol Hickman, K.C. and Arlene Henry, K.C., two of the foremost
-									Med-Arb practitioners in Canada. He is a rostered member of Mediate BC, a practicing member of
-									the Law Society of British Columbia, and a current member of the Canadian Bar Association, the
-									Surrey Bar Association, and the New Westminster Bar Association.
+									He is a rostered member of Mediate BC, a practicing member of the Law Society of British
+									Columbia, and a current member of the Canadian Bar Association, the Surrey Bar Association,
+									and the New Westminster Bar Association. He serves as a mentor to two generations of BC trial
+									lawyers and continues to act as a sounding board for counsel preparing complex files.
 								</p>
 							</div>
 							<div class="mt-8 flex flex-wrap gap-3">
@@ -335,7 +340,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 								It’s not about the mediator. It’s about asking the right questions, and giving the person
 								across the table the confidence to tell you where they actually stand.
 							</blockquote>
-							<figcaption class="eyebrow mt-6 text-measured">Peter Buxton, K.C.</figcaption>
+							<figcaption class="eyebrow mt-6 text-measured">Peter Buxton, KC</figcaption>
 						</figure>
 					</div>
 				</div>
@@ -353,7 +358,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 							<span set:html={hexTiny} />05 — Testimonials
 						</p>
 						<h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
-							What counsel say.
+							What Counsel Say
 						</h2>
 					</div>
 					<div class="mt-14 grid gap-6 md:grid-cols-3">
@@ -528,7 +533,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 				<div class="flex flex-col items-start gap-10 md:flex-row md:justify-between">
 					<div class="max-w-md">
 						<img src="/Buxton_ADR_Badge.png" alt="Buxton ADR" width="150" class="w-[130px]" />
-						<p class="mt-5 font-serif text-lg font-semibold text-slate-ink">Peter Buxton, K.C.</p>
+						<p class="mt-5 font-serif text-lg font-semibold text-slate-ink">Peter Buxton KC</p>
 						<p class="text-sm text-slate-ink/70">Mediator · Arbitrator · Med-Arb Specialist</p>
 						<p class="mt-3 text-sm text-slate-ink/70">
 							Member, Mediate BC Civil Roster · Law Society of British Columbia
@@ -547,7 +552,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 					</nav>
 				</div>
 				<div class="mt-10 border-t border-slate-ink/10 pt-6 text-xs text-slate-ink/50">
-					&copy; {new Date().getFullYear()} Peter Buxton K.C. Personal Law Corporation | buxtonadr.ca
+					&copy; {new Date().getFullYear()} Peter F. Buxton Law Corporation | buxtonadr.ca
 				</div>
 			</div>
 		</footer>
