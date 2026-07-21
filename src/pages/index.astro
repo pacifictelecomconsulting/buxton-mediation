@@ -281,11 +281,19 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 							professional process and, when asked, give an honest read on the file.
 						</p>
 					</div>
-					<div class="mt-14 grid gap-6 md:grid-cols-2">
-						{worksWith.map((panel) => (
-							<div class="border-l-[3px] border-appellate bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
-								<h3 class="font-serif text-xl font-semibold text-slate-ink">{panel.title}</h3>
-								<p class="mt-3 leading-relaxed text-slate-ink/75">{panel.body}</p>
+					<div class="mt-14 divide-y divide-slate-ink/10">
+						{worksWith.map((panel, i) => (
+							<div class={`reveal flex flex-col items-center gap-6 py-8 text-center sm:py-10 md:flex-row md:text-left ${i % 2 === 1 ? 'md:flex-row-reverse md:gap-8' : 'md:gap-14'}`}>
+								<div class="relative flex h-[108px] w-[108px] flex-shrink-0 items-center justify-center sm:h-[126px] sm:w-[126px]">
+									<svg viewBox="0 0 174 200" class="absolute inset-0 h-full w-full" aria-hidden="true">
+										<polygon points={HEX} class="hex-line" stroke-width="1.2" vector-effect="non-scaling-stroke" />
+									</svg>
+									<span class="relative font-serif text-2xl font-semibold text-slate-ink">{String(i + 1).padStart(2, '0')}</span>
+								</div>
+								<div class="flex-1">
+									<h3 class="font-serif text-xl font-semibold text-slate-ink">{panel.title}</h3>
+									<p class="mt-3 leading-relaxed text-slate-ink/75">{panel.body}</p>
+								</div>
 							</div>
 						))}
 					</div>
