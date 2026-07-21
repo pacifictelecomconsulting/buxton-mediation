@@ -132,6 +132,21 @@ details.faq[open] > summary .chev { transform: rotate(45deg); }
 		var(--color-deep-teal);
 }
 
+/* ── Testimonial panel — subtle brand-toned glow, palette only ─── */
+.testimonial-glow {
+	background:
+		radial-gradient(70% 60% at 15% 0%, rgba(90, 138, 159, 0.16), transparent 60%),
+		radial-gradient(60% 70% at 100% 100%, rgba(26, 46, 59, 0.35), transparent 65%);
+}
+.testimonial-slide {
+	transition: opacity 0.6s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+	.testimonial-slide {
+		transition: none;
+	}
+}
+
 /* ── Hexagon geometry (pointy-top, √3:2 — from Buxton_ADR_Badge.png) ── */
 .hex-line { fill: none; stroke: var(--color-measured); }
 .hex-line-red { fill: none; stroke: var(--color-appellate); }

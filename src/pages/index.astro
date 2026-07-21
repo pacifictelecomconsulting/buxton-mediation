@@ -54,10 +54,34 @@ const credentialTags = [
 ];
 
 const testimonials = [
-	{ role: 'Personal Injury Counsel', firm: 'Vancouver, BC' },
-	{ role: 'Estate Litigation Counsel', firm: 'Lower Mainland, BC' },
-	{ role: 'Corporate Counsel', firm: 'Surrey, BC' },
+	{
+		name: 'Nassim Baharian',
+		role: 'Associate',
+		firm: 'Singleton Urquhart Reynolds Vogel LLP',
+		quote:
+			'I would not hesitate to recommend Peter Buxton as a mediator.\n\nPeter demonstrated exceptional professionalism and dedication throughout the mediation. He took the time to speak with counsel and the parties in advance, remained fully engaged throughout the process, and was genuinely committed to helping the parties reach a resolution.',
+	},
+	{
+		role: 'Estate Litigation Counsel',
+		firm: 'Lower Mainland, BC',
+		quote:
+			'Placeholder testimonial. Real quotes from counsel and parties will be added here once approved for use. This copy holds the layout and typographic rhythm of the final quote.',
+	},
+	{
+		role: 'Corporate Counsel',
+		firm: 'Surrey, BC',
+		quote:
+			'Placeholder testimonial. Real quotes from counsel and parties will be added here once approved for use. This copy holds the layout and typographic rhythm of the final quote.',
+	},
 ];
+
+function splitQuote(quote) {
+	const [firstParagraph, ...restParagraphs] = quote.split('\n\n');
+	const sentenceEnd = firstParagraph.indexOf('. ');
+	const firstSentence = sentenceEnd === -1 ? firstParagraph : firstParagraph.slice(0, sentenceEnd + 1);
+	const restOfFirst = sentenceEnd === -1 ? '' : firstParagraph.slice(sentenceEnd + 1);
+	return { firstSentence, restOfFirst, restParagraphs };
+}
 
 const faqs = [
 	{
@@ -111,10 +135,10 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Buxton ADR | Peter Buxton, K.C. — Mediator · Arbitrator · Med-Arb Specialist</title>
+		<title>Buxton ADR | Peter Buxton, KC — Mediator · Arbitrator · Med-Arb Specialist</title>
 		<meta
 			name="description"
-			content="Peter Buxton, K.C. — forty-five years in the room. Med-Arb delivers a binding decision in months, not years, with every chance to settle first. Mediation, arbitration, and Med-Arb across British Columbia."
+			content="Peter Buxton, KC — forty-five years in the room. Med-Arb delivers a binding decision in months, not years, with every chance to settle first. Mediation, arbitration, and Med-Arb across British Columbia."
 		/>
 	</head>
 	<body class="bg-clean-page font-sans text-slate-ink antialiased">
@@ -185,7 +209,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 					<!-- Text plane (≈60%) -->
 					<div class="hero-fade-text relative z-10 ml-auto w-full max-w-[46rem] px-6 py-12 sm:py-20 lg:px-12 lg:py-24">
 						<p class="section-label flex items-center gap-2 text-measured">
-							<span set:html={hexTiny} />01 — Peter Buxton, K.C.
+							<span set:html={hexTiny} />01 — Peter Buxton, KC
 						</p>
 						<p class="eyebrow mt-5 text-white/55">Mediator · Arbitrator · Med-Arb Specialist</p>
 						<div class="relative mt-12">
@@ -193,7 +217,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 	<h1 class="hero-h1">Forty-five years in the room.</h1>
 </div>
 						<div class="mt-8 max-w-lg space-y-4 text-lg leading-relaxed text-white/85">
-							<p>Peter Buxton KC knows what a judge will do. So do the lawyers who retain him.</p>
+							<p>Peter Buxton, KC knows what a judge will do. So do the lawyers who retain him.</p>
 							<p>Med-Arb delivers a binding decision in months, not years, with every chance to settle first.</p>
 						</div>
 						<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -206,7 +230,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 <div class="hero-fade-portrait relative z-20 order-first min-h-[24rem] overflow-hidden bg-slate-ink sm:min-h-[30rem] lg:order-none lg:min-h-[40rem] lg:my-8 lg:mr-8">
 	<img
 		src="/Peter_Image_2.jpeg"
-		alt="Peter Buxton, K.C."
+		alt="Peter Buxton, KC"
 		width="684"
 		height="684"
 		class="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
@@ -313,7 +337,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 						<figure class="lg:order-2 lg:sticky lg:top-24">
 							<img
 								src="/Peter_Image.jpg"
-								alt="Peter Buxton, K.C. — mediator, arbitrator, and Med-Arb specialist"
+								alt="Peter Buxton, KC — mediator, arbitrator, and Med-Arb specialist"
 								width="750"
 								height="500"
 								class="aspect-[4/3] w-full rounded object-cover"
@@ -347,13 +371,11 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 								</blockquote>
 								<figcaption class="eyebrow mt-4 text-measured">Peter Buxton, KC</figcaption>
 							</figure>
-							<div class="mt-8 flex flex-wrap gap-3">
+							<p class="mt-8 flex flex-wrap items-center gap-y-2 divide-x divide-slate-ink/25 font-mono text-xs tracking-wide text-slate-ink/70">
 								{credentialTags.map((tag) => (
-									<span class="rounded-full border border-slate-ink/15 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-slate-ink/80">
-										{tag}
-									</span>
+									<span class="px-3 first:pl-0">{tag}</span>
 								))}
-							</div>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -361,6 +383,8 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 
 			<!-- 05 — TESTIMONIALS -->
 			<section class="relative isolate overflow-hidden bg-deep-teal text-white">
+				<!-- Subtle brand-toned background texture -->
+				<div class="testimonial-glow pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
 				<!-- Faint badge geometry behind testimonials -->
 				<svg viewBox="0 0 174 200" class="pointer-events-none absolute -right-16 top-8 -z-10 h-[120%] w-auto opacity-[0.05]" aria-hidden="true">
 					<polygon points={HEX} class="hex-line" stroke-width="1.2" vector-effect="non-scaling-stroke" />
@@ -374,20 +398,58 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 							What Counsel Say
 						</h2>
 					</div>
-					<div class="mt-14 grid gap-6 md:grid-cols-3">
-						{testimonials.map((t) => (
-							<figure class="flex flex-col rounded-lg bg-white/5 p-8 ring-1 ring-white/10">
-								<div class="font-serif text-5xl leading-none text-measured" aria-hidden="true">&ldquo;</div>
-								<blockquote class="mt-3 flex-1 leading-relaxed text-white/80">
-									Placeholder testimonial. Real quotes from counsel and parties will be added here once
-									approved for use. This copy holds the layout and typographic rhythm of the final quote.
-								</blockquote>
-								<figcaption class="mt-6 border-t border-white/15 pt-4">
-									<p class="font-semibold text-white">{t.role}</p>
-									<p class="text-sm text-white/60">{t.firm}</p>
-								</figcaption>
-							</figure>
-						))}
+					<div id="testimonial-carousel" class="mt-10 max-w-3xl">
+						<div class="relative min-h-[260px] sm:min-h-[200px]" data-testimonial-track>
+							{testimonials.map((t, i) => {
+								const q = splitQuote(t.quote);
+								return (
+									<figure
+										class={`testimonial-slide absolute inset-0 ${i === 0 ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+										data-testimonial-slide
+										aria-hidden={i === 0 ? 'false' : 'true'}
+									>
+										<div class="font-serif text-4xl leading-none text-measured" aria-hidden="true">&ldquo;</div>
+										<blockquote class="mt-2 max-w-[650px] font-serif text-white/90">
+											<p class="text-xl italic leading-snug text-white sm:text-2xl">
+												<em class="italic">{q.firstSentence}</em>{q.restOfFirst}
+											</p>
+											{q.restParagraphs.map((p) => (
+												<p class="mt-3 text-base leading-relaxed text-white/75 sm:text-lg">{p}</p>
+											))}
+										</blockquote>
+										<figcaption class="mt-4 border-t border-white/15 pt-3">
+											<p class="font-semibold text-white">{t.name ?? t.role}</p>
+											<p class="text-sm text-white/60">{t.name ? `${t.role} · ${t.firm}` : t.firm}</p>
+										</figcaption>
+									</figure>
+								);
+							})}
+						</div>
+						<div class="mt-8 flex items-center gap-6">
+							<button
+								type="button"
+								data-testimonial-prev
+								aria-label="Previous testimonial"
+								class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-lg text-white/70 transition-colors hover:border-white hover:text-white"
+							>&#8249;</button>
+							<div class="flex items-center gap-2" data-testimonial-dots>
+								{testimonials.map((_, i) => (
+									<button
+										type="button"
+										data-testimonial-dot
+										data-index={i}
+										aria-label={`Go to testimonial ${i + 1}`}
+										class={`h-1.5 w-1.5 rounded-full transition-colors ${i === 0 ? 'bg-white' : 'bg-white/30'}`}
+									></button>
+								))}
+							</div>
+							<button
+								type="button"
+								data-testimonial-next
+								aria-label="Next testimonial"
+								class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-lg text-white/70 transition-colors hover:border-white hover:text-white"
+							>&#8250;</button>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -545,7 +607,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 			<div class="mx-auto max-w-6xl px-6 py-10">
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:items-center">
 					<div class="max-w-md">
-						<p class="font-serif text-base font-semibold text-white">Peter Buxton KC</p>
+						<p class="font-serif text-base font-semibold text-white">Peter Buxton, KC</p>
 						<p class="mt-1 text-sm text-white/70">Mediator · Arbitrator · Med-Arb Specialist</p>
 						<p class="mt-1 text-sm text-white/80">
 							Member, Mediate BC Civil Roster · Law Society of British Columbia
@@ -697,6 +759,70 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 					});
 				}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
 				els.forEach(function (el) { io.observe(el); });
+			})();
+		</script>
+		<script is:inline>
+			(function () {
+				var root = document.getElementById('testimonial-carousel');
+				if (!root) return;
+				var slides = root.querySelectorAll('[data-testimonial-slide]');
+				var dots = root.querySelectorAll('[data-testimonial-dot]');
+				var prevBtn = root.querySelector('[data-testimonial-prev]');
+				var nextBtn = root.querySelector('[data-testimonial-next]');
+				var track = root.querySelector('[data-testimonial-track]');
+				var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+				var index = 0;
+				var timer = null;
+
+				function show(i) {
+					index = (i + slides.length) % slides.length;
+					slides.forEach(function (slide, si) {
+						var active = si === index;
+						slide.classList.toggle('opacity-100', active);
+						slide.classList.toggle('opacity-0', !active);
+						slide.classList.toggle('pointer-events-none', !active);
+						slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+					});
+					dots.forEach(function (dot, di) {
+						dot.classList.toggle('bg-white', di === index);
+						dot.classList.toggle('bg-white/30', di !== index);
+					});
+				}
+				function next() { show(index + 1); }
+				function prev() { show(index - 1); }
+				function stopAutoplay() {
+					if (timer) { window.clearInterval(timer); timer = null; }
+				}
+				function startAutoplay() {
+					if (reduce || slides.length < 2) return;
+					stopAutoplay();
+					timer = window.setInterval(next, 7000);
+				}
+
+				if (prevBtn) prevBtn.addEventListener('click', function () { prev(); startAutoplay(); });
+				if (nextBtn) nextBtn.addEventListener('click', function () { next(); startAutoplay(); });
+				dots.forEach(function (dot, di) {
+					dot.addEventListener('click', function () { show(di); startAutoplay(); });
+				});
+
+				if (track) {
+					var touchStartX = null;
+					track.addEventListener('touchstart', function (e) {
+						touchStartX = e.changedTouches[0].clientX;
+					}, { passive: true });
+					track.addEventListener('touchend', function (e) {
+						if (touchStartX === null) return;
+						var dx = e.changedTouches[0].clientX - touchStartX;
+						if (Math.abs(dx) > 40) {
+							if (dx < 0) { next(); } else { prev(); }
+							startAutoplay();
+						}
+						touchStartX = null;
+					}, { passive: true });
+				}
+
+				show(0);
+				startAutoplay();
 			})();
 		</script>
 	</body>
