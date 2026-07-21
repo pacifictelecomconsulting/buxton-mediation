@@ -11,17 +11,17 @@ const practice = [
 	{
 		title: 'Mediation',
 		featured: false,
-		body: 'A structured process where Peter facilitates negotiation between parties. He asks the right questions, reads what is not being said, and helps both sides arrive at a resolution they can stand behind. Seventy to eighty percent of med-arb files settle at this stage.',
+		body: 'A structured process where Peter facilitates negotiation between parties. He asks the right questions, reads what is not being said, and helps both sides arrive at a resolution they can stand behind. <strong class="font-semibold text-slate-ink">Seventy to eighty percent of med-arb files settle at this stage.</strong>',
 	},
 	{
 		title: 'Med-Arb',
 		featured: true,
-		body: 'The process begins as a mediation. If the parties reach an agreement, the file closes. If they don’t, Peter moves seamlessly into the role of arbitrator and delivers a binding decision. One neutral. One process. Resolution assured.',
+		body: 'The process begins as a mediation. If the parties reach an agreement, the file closes. If they don’t, Peter moves seamlessly into the role of arbitrator and delivers a binding decision. <strong class="font-semibold text-slate-ink">One neutral. One process. Resolution assured.</strong>',
 	},
 	{
 		title: 'Arbitration',
 		featured: false,
-		body: 'When a decision needs to be made, Peter makes it. As a trial lawyer with over four decades of courtroom experience, he understands what evidence means, how findings of fact are made, and what a written decision needs to hold up.',
+		body: '<strong class="font-semibold text-slate-ink">When a decision needs to be made, Peter makes it.</strong> As a trial lawyer with over four decades of courtroom experience, he understands what evidence means, how findings of fact are made, and what a written decision needs to hold up.',
 	},
 ];
 
@@ -239,10 +239,10 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 					<div class="mt-20 grid gap-6 lg:grid-cols-3 lg:items-start">
 						{practice.map((card) => (
 							<div
-								class={`relative flex h-full flex-col rounded border border-slate-ink/10 bg-white p-9 ${
+								class={`relative flex h-full flex-col rounded p-9 ${
 									card.featured
-										? 'border-t-[3px] border-t-appellate sm:p-10 lg:-mt-8 lg:pb-12'
-										: ''
+										? 'border-2 border-appellate bg-open-brief shadow-sm sm:p-10 lg:-mx-3 lg:-mt-8 lg:pb-12 lg:shadow-lg'
+										: 'border border-slate-ink/10 bg-white'
 								}`}
 							>
 								{card.featured && (
@@ -254,7 +254,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 									{card.title}
 								</h3>
 								<div class={`mt-3 h-px ${card.featured ? 'w-16 bg-appellate' : 'w-12 bg-measured'}`}></div>
-								<p class="mt-5 flex-1 leading-relaxed text-slate-ink/75">{card.body}</p>
+								<p class="mt-5 flex-1 leading-relaxed text-slate-ink/75" set:html={card.body} />
 								{card.featured && (
 									<a href="#med-arb" class="link-arrow mt-7 text-sm font-semibold text-appellate">
 										How Med-Arb works <span aria-hidden="true">&rarr;</span>
