@@ -124,8 +124,8 @@ const faqs = [
 const HEX = '87,2 172,51 172,149 87,198 2,149 2,51';
 // Small heading accent hexagon (Appellate Red outline).
 const hexTiny = `<svg viewBox="0 0 174 200" width="12" height="14" aria-hidden="true" class="inline-block shrink-0"><polygon points="${HEX}" class="hex-line-red" stroke-width="10"/></svg>`;
-// Divider hexagon (Appellate Red outline).
-const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="true" class="shrink-0"><polygon points="${HEX}" class="hex-line-red" stroke-width="9"/></svg>`;
+// Small heading accent hexagon, light slate variant for dark backgrounds.
+const hexTinyLight = `<svg viewBox="0 0 174 200" width="12" height="14" aria-hidden="true" class="inline-block shrink-0"><polygon points="${HEX}" class="hex-line" stroke-width="10"/></svg>`;
 ---
 
 <html lang="en">
@@ -135,23 +135,23 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Buxton ADR | Peter Buxton, KC — Mediator · Arbitrator · Med-Arb Specialist</title>
+		<title>Buxton ADR | Peter Buxton KC — Mediator · Arbitrator · Med-Arb Specialist</title>
 		<meta
 			name="description"
-			content="Peter Buxton, KC — forty-five years in the room. Med-Arb delivers a binding decision in months, not years, with every chance to settle first. Mediation, arbitration, and Med-Arb across British Columbia."
+			content="Peter Buxton KC — forty-five years in the room. Med-Arb delivers a binding decision in months, not years, with every chance to settle first. Mediation, arbitration, and Med-Arb across British Columbia."
 		/>
 	</head>
 	<body class="bg-clean-page font-sans text-slate-ink antialiased">
 		<!-- Header / Nav -->
 		<header class="sticky top-0 z-50 border-b border-measured/40 bg-clean-page">
-			<nav class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-3 sm:py-4">
+			<nav class="relative mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-3 sm:py-4">
 				<a href="#top" class="flex items-center" aria-label="Buxton ADR home">
 					<img
 	src="/buxton-adr-horizontal-light.png"
 	alt="Buxton ADR — Mediation · Arbitration · Med-Arb"
 	width="1000"
 	height="400"
-	class="h-[78px] w-auto object-contain transition-transform duration-300 sm:h-[118px]"
+	class="h-[86px] w-auto object-contain transition-transform duration-300 sm:h-[118px]"
 />
 				</a>
 
@@ -160,7 +160,18 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 				<label
 					for="nav-toggle"
 					aria-label="Toggle navigation menu"
-					class="flex h-11 w-11 flex-shrink-0 cursor-pointer items-center justify-center text-slate-ink md:hidden"
+					class="flex h-11 w-11 flex-shrink-0 cursor-pointer items-center justify-center self-center text-slate-ink peer-checked:hidden md:hidden"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+					</svg>
+				</label>
+
+				<!-- Close control — sits at the open panel's top-right, replacing the hamburger while the menu is open -->
+				<label
+					for="nav-toggle"
+					aria-label="Toggle navigation menu"
+					class="absolute right-6 top-3 hidden h-11 w-11 flex-shrink-0 cursor-pointer items-center justify-center text-slate-ink peer-checked:flex sm:top-4 md:hidden"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -205,7 +216,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 					<!-- Text plane (≈60%) -->
 					<div class="hero-fade-text relative z-10 ml-auto w-full max-w-[46rem] px-6 py-12 sm:py-20 lg:px-12 lg:py-24">
 						<p class="section-label flex items-center gap-2 text-measured">
-							<span set:html={hexTiny} />01 — Peter Buxton, KC
+							<span set:html={hexTinyLight} />01 — Peter Buxton KC
 						</p>
 						<p class="eyebrow mt-5 text-white/55">Mediator · Arbitrator · Med-Arb Specialist</p>
 						<div class="relative mt-12">
@@ -213,7 +224,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 	<h1 class="hero-h1">Forty-five years in the room.</h1>
 </div>
 						<div class="mt-8 max-w-lg space-y-4 text-lg leading-relaxed text-white/85">
-							<p>Peter Buxton, KC knows what a judge will do. So do the lawyers who retain him.</p>
+							<p>Peter Buxton KC knows what a judge will do. So do the lawyers who retain him.</p>
 							<p>Med-Arb delivers a binding decision in months, not years, with every chance to settle first.</p>
 						</div>
 						<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -226,7 +237,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 <div class="hero-fade-portrait relative z-20 order-first min-h-[24rem] overflow-hidden bg-slate-ink sm:min-h-[30rem] lg:order-none lg:min-h-[40rem] lg:my-8 lg:mr-8">
 	<img
 		src="/Peter_Image_2.jpeg"
-		alt="Peter Buxton, KC"
+		alt="Peter Buxton KC"
 		width="684"
 		height="684"
 		class="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
@@ -318,27 +329,12 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 						))}
 					</div>
 				</div>
-				<!-- Hexagon divider between informational sections -->
-				<div class="hex-divider pb-4" aria-hidden="true">
-					<span class="rule rule-l"></span>
-					<span set:html={hexDiv} />
-					<span class="rule rule-r"></span>
-				</div>
 			</section>
 
 			<!-- 04 — CREDENTIALS -->
 			<section id="about" class="bg-clean-page">
 				<div class="reveal mx-auto max-w-6xl px-6 py-20 sm:py-24">
 					<div class="grid gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-start lg:gap-20">
-						<figure class="lg:order-2 lg:sticky lg:top-24">
-							<img
-								src="/Peter_Image.jpg"
-								alt="Peter Buxton, KC — mediator, arbitrator, and Med-Arb specialist"
-								width="750"
-								height="500"
-								class="aspect-[4/3] w-full rounded object-cover"
-							/>
-						</figure>
 						<div class="lg:order-1">
 							<p class="section-label flex items-center gap-2 text-appellate">
 								<span set:html={hexTiny} />04 — Credentials
@@ -359,19 +355,30 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 									lawyers and continues to act as a sounding board for counsel preparing complex files.
 								</p>
 							</div>
+							<p class="mt-8 flex flex-wrap items-center gap-y-2 divide-x divide-slate-ink/25 font-mono text-xs tracking-wide text-slate-ink/70">
+								{credentialTags.map((tag) => (
+									<span class="px-3 first:pl-0">{tag}</span>
+								))}
+							</p>
+						</div>
+						<div class="lg:order-2">
+							<figure>
+								<img
+									src="/Peter_Image.jpg"
+									alt="Peter Buxton KC — mediator, arbitrator, and Med-Arb specialist"
+									width="750"
+									height="500"
+									class="aspect-[4/3] w-full rounded object-cover"
+								/>
+							</figure>
 							<figure class="mt-6">
 								<span class="font-serif text-3xl leading-none text-appellate" aria-hidden="true">&ldquo;</span>
 								<blockquote class="mt-1 font-serif text-lg italic leading-relaxed text-slate-ink sm:text-xl">
 									It’s not about the mediator. It’s about asking the right questions, and giving the person
 									across the table the confidence to tell you where they actually stand.
 								</blockquote>
-								<figcaption class="eyebrow mt-4 text-measured">Peter Buxton, KC</figcaption>
+								<figcaption class="eyebrow mt-4 text-measured">Peter Buxton KC</figcaption>
 							</figure>
-							<p class="mt-8 flex flex-wrap items-center gap-y-2 divide-x divide-slate-ink/25 font-mono text-xs tracking-wide text-slate-ink/70">
-								{credentialTags.map((tag) => (
-									<span class="px-3 first:pl-0">{tag}</span>
-								))}
-							</p>
 						</div>
 					</div>
 				</div>
@@ -388,14 +395,14 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 				<div class="mx-auto max-w-6xl px-6 py-24 sm:py-32">
 					<div class="max-w-2xl">
 						<p class="section-label flex items-center gap-2 text-measured">
-							<span set:html={hexTiny} />05 — Testimonials
+							<span set:html={hexTinyLight} />05 — Testimonials
 						</p>
 						<h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
 							What Counsel Say
 						</h2>
 					</div>
 					<div id="testimonial-carousel" class="mt-10 max-w-3xl">
-						<div class="relative min-h-[260px] sm:min-h-[200px]" data-testimonial-track>
+						<div class="relative min-h-[360px] sm:min-h-[280px]" data-testimonial-track>
 							{testimonials.map((t, i) => {
 								const q = splitQuote(t.quote);
 								return (
@@ -603,7 +610,7 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 			<div class="mx-auto max-w-6xl px-6 py-10">
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:items-center">
 					<div class="max-w-md">
-						<p class="font-serif text-base font-semibold text-white">Peter Buxton, KC</p>
+						<p class="font-serif text-base font-semibold text-white">Peter Buxton KC</p>
 						<p class="mt-1 text-sm text-white/70">Mediator · Arbitrator · Med-Arb Specialist</p>
 						<p class="mt-1 text-sm text-white/80">
 							Member, Mediate BC Civil Roster · Law Society of British Columbia
@@ -625,7 +632,8 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 						/>
 					</div>
 
-					<nav class="flex flex-col gap-2 text-sm font-medium text-white/80 md:justify-self-end md:self-start">
+					<nav class="flex flex-col gap-2 text-sm font-medium text-white/80 md:justify-self-end">
+						<p class="mb-1 text-sm font-semibold text-white">Quick Links</p>
 						<a href="#practice" class="hover:text-white">Practice</a>
 						<a href="#about" class="hover:text-white">About</a>
 						<a href="#med-arb" class="hover:text-white">Med-Arb</a>
@@ -737,6 +745,17 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 		<script is:inline>
 			if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 			window.scrollTo(0, 0);
+		</script>
+		<script is:inline>
+			(function () {
+				var navToggle = document.getElementById('nav-toggle');
+				if (!navToggle) return;
+				document.querySelectorAll('header nav a[href^="#"]').forEach(function (link) {
+					link.addEventListener('click', function () {
+						navToggle.checked = false;
+					});
+				});
+			})();
 		</script>
 		<script is:inline>
 			(function () {
