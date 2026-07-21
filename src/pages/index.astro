@@ -205,11 +205,11 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 					<!-- Portrait plane -->
 <div class="hero-fade-portrait relative z-20 order-first min-h-[24rem] overflow-hidden bg-slate-ink sm:min-h-[30rem] lg:order-none lg:min-h-[40rem] lg:my-8 lg:mr-8">
 	<img
-		src="/Peter_Image.jpg"
+		src="/Peter_Image_2.jpeg"
 		alt="Peter Buxton, K.C."
-		width="640"
-		height="800"
-		class="absolute inset-0 h-full w-full scale-[1.04] object-cover object-[50%_18%]"
+		width="684"
+		height="684"
+		class="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
 	/>
 
 	<!-- Subtle transition between the text and portrait -->
@@ -530,17 +530,9 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 
 		<footer class="bg-slate-ink">
 			<div class="mx-auto max-w-6xl px-6 py-10">
-				<div class="flex flex-col items-start gap-8 md:flex-row md:justify-between">
+				<div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:items-center">
 					<div class="max-w-md">
-						<img
-							src="/Buxton_ADR_Horizontal_-_Dark.png"
-							alt="Buxton ADR — Mediation · Arbitration · Med-Arb"
-							width="1000"
-							height="400"
-							class="h-auto w-[200px]"
-						/>
-
-						<p class="mt-4 font-serif text-base font-semibold text-white">Peter Buxton KC</p>
+						<p class="font-serif text-base font-semibold text-white">Peter Buxton KC</p>
 						<p class="mt-1 text-sm text-white/70">Mediator · Arbitrator · Med-Arb Specialist</p>
 						<p class="mt-1 text-sm text-white/80">
 							Member, Mediate BC Civil Roster · Law Society of British Columbia
@@ -551,14 +543,25 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 							<a href="mailto:peter@buxtonmediation.ca" class="hover:text-white">peter@buxtonmediation.ca</a>
 						</p>
 					</div>
-					<nav class="flex flex-col gap-2 text-sm font-medium text-white/80 md:-ml-12">
+
+					<div class="flex justify-center">
+						<img
+							src="/Buxton ADR Badge Dark.png"
+							alt="Buxton ADR — Mediation · Arbitration · Med-Arb"
+							width="1563"
+							height="1563"
+							class="h-auto w-[140px]"
+						/>
+					</div>
+
+					<nav class="flex flex-col gap-2 text-sm font-medium text-white/80 md:justify-self-end md:self-start">
 						<a href="#practice" class="hover:text-white">Practice</a>
 						<a href="#about" class="hover:text-white">About</a>
 						<a href="#med-arb" class="hover:text-white">Med-Arb</a>
 						<a href="#book" class="hover:text-white">Book a Call</a>
 					</nav>
 				</div>
-				<div class="mt-8 text-xs text-white/50">
+				<div class="mt-8 text-center text-xs text-white/50">
 					&copy; {new Date().getFullYear()} Peter F. Buxton Law Corporation | buxtonadr.ca
 				</div>
 			</div>
