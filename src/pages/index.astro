@@ -308,9 +308,18 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 
 			<!-- 04 — CREDENTIALS -->
 			<section id="about" class="bg-clean-page">
-				<div class="mx-auto max-w-6xl px-6 py-20 sm:py-24">
-					<div class="grid gap-14 lg:grid-cols-[1fr_0.85fr] lg:gap-20">
-						<div>
+				<div class="reveal mx-auto max-w-6xl px-6 py-20 sm:py-24">
+					<div class="grid gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-start lg:gap-20">
+						<figure class="lg:order-2 lg:sticky lg:top-24">
+							<img
+								src="/Peter_Image.jpg"
+								alt="Peter Buxton, K.C. — mediator, arbitrator, and Med-Arb specialist"
+								width="750"
+								height="500"
+								class="aspect-[4/3] w-full rounded object-cover"
+							/>
+						</figure>
+						<div class="lg:order-1">
 							<p class="section-label flex items-center gap-2 text-appellate">
 								<span set:html={hexTiny} />04 — Credentials
 							</p>
@@ -330,6 +339,14 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 									lawyers and continues to act as a sounding board for counsel preparing complex files.
 								</p>
 							</div>
+							<figure class="mt-6">
+								<span class="font-serif text-3xl leading-none text-appellate" aria-hidden="true">&ldquo;</span>
+								<blockquote class="mt-1 font-serif text-lg italic leading-relaxed text-slate-ink sm:text-xl">
+									It’s not about the mediator. It’s about asking the right questions, and giving the person
+									across the table the confidence to tell you where they actually stand.
+								</blockquote>
+								<figcaption class="eyebrow mt-4 text-measured">Peter Buxton, KC</figcaption>
+							</figure>
 							<div class="mt-8 flex flex-wrap gap-3">
 								{credentialTags.map((tag) => (
 									<span class="rounded-full border border-slate-ink/15 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-slate-ink/80">
@@ -338,18 +355,6 @@ const hexDiv = `<svg viewBox="0 0 174 200" width="16" height="18" aria-hidden="t
 								))}
 							</div>
 						</div>
-						<figure class="relative isolate self-start overflow-hidden border-l-[3px] border-appellate bg-white p-8 shadow-sm sm:p-10 lg:sticky lg:top-24">
-							<!-- Geometric linework behind the pull quote -->
-							<svg viewBox="0 0 174 200" class="pointer-events-none absolute -right-10 -top-8 -z-10 h-56 w-auto opacity-[0.07]" aria-hidden="true">
-								<polygon points={HEX} class="hex-line-red" stroke-width="1.4" vector-effect="non-scaling-stroke" />
-							</svg>
-							<span class="font-serif text-5xl leading-none text-appellate" aria-hidden="true">&ldquo;</span>
-							<blockquote class="-mt-4 font-serif text-xl italic leading-relaxed text-slate-ink sm:text-2xl">
-								It’s not about the mediator. It’s about asking the right questions, and giving the person
-								across the table the confidence to tell you where they actually stand.
-							</blockquote>
-							<figcaption class="eyebrow mt-6 text-measured">Peter Buxton, KC</figcaption>
-						</figure>
 					</div>
 				</div>
 			</section>
