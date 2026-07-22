@@ -44,13 +44,10 @@ const worksWith = [
 	},
 ];
 
-const credentialTags = [
-	'KC',
-	'Harvard Certified',
-	'Med-Arb Specialist',
-	'Mediate BC Civil Roster',
-	'Law Society of BC',
-	'Called to Bar 1981',
+const credentialLines = [
+	['KC', 'Harvard Certified', 'Med-Arb Specialist'],
+	['Mediate BC Civil Roster'],
+	['Law Society of BC', 'Called to Bar 1981'],
 ];
 
 const testimonials = [
@@ -355,11 +352,15 @@ const hexTinyLight = `<svg viewBox="0 0 174 200" width="12" height="14" aria-hid
 									lawyers and continues to act as a sounding board for counsel preparing complex files.
 								</p>
 							</div>
-							<p class="mt-8 flex flex-wrap items-center gap-y-2 divide-x divide-slate-ink/25 font-mono text-xs tracking-wide text-slate-ink/70">
-								{credentialTags.map((tag) => (
-									<span class="px-3 first:pl-0">{tag}</span>
+							<div class="mt-8 flex flex-col gap-y-2 font-mono text-xs tracking-wide text-slate-ink/70">
+								{credentialLines.map((line) => (
+									<p class="flex items-center">
+										{line.map((tag) => (
+											<span class="border-slate-ink/25 px-3 first:pl-0 last:border-r-0 last:pr-0 border-r">{tag}</span>
+										))}
+									</p>
 								))}
-							</p>
+							</div>
 						</div>
 						<div class="lg:order-2">
 							<figure>

@@ -108,7 +108,7 @@ details.faq[open] > summary .chev { transform: rotate(45deg); }
 	background: var(--color-appellate);
 	color: #fff;
 	font-weight: 600;
-	font-size: 0.8125rem;
+	font-size: 0.9rem;
 	letter-spacing: 0.03em;
 	transition: background-color 0.2s ease;
 }
