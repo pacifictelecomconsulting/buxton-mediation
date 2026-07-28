@@ -13,7 +13,7 @@ interface GCalResponse {
 	items?: GCalEvent[];
 }
 
-const CAL_ID = 'c_72f50fd5e92e08a4126617d184bde2b1b05f0dabfe4c40ec4127610ab69ca008%40group.calendar.google.com';
+const CAL_ID = 'c_3f0d389534af08f73ab9fa1b5f7a45cf5ae9c0f6944ca0567a4440f9b5a7d1aa@group.calendar.google.com';
 
 function pad(n: number): string {
 	return String(n).padStart(2, '0');
