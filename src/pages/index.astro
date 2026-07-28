@@ -58,18 +58,7 @@ const testimonials = [
 		quote:
 			'I would not hesitate to recommend Peter Buxton as a mediator.\n\nPeter demonstrated exceptional professionalism and dedication throughout the mediation. He took the time to speak with counsel and the parties in advance, remained fully engaged throughout the process, and was genuinely committed to helping the parties reach a resolution.',
 	},
-	{
-		role: 'Estate Litigation Counsel',
-		firm: 'Lower Mainland, BC',
-		quote:
-			'Placeholder testimonial. Real quotes from counsel and parties will be added here once approved for use. This copy holds the layout and typographic rhythm of the final quote.',
-	},
-	{
-		role: 'Corporate Counsel',
-		firm: 'Surrey, BC',
-		quote:
-			'Placeholder testimonial. Real quotes from counsel and parties will be added here once approved for use. This copy holds the layout and typographic rhythm of the final quote.',
-	},
+
 ];
 
 function splitQuote(quote) {
@@ -95,7 +84,7 @@ const faqs = [
 	},
 	{
 		q: 'What does it cost compared to litigation?',
-		a: 'Significantly less. Depending on complexity, total process cost typically ranges from $20,000 to $50,000 across both phases, compared to the six-figure cost of a multi-day trial and the risk of an adverse costs award.',
+		a: 'Significantly less. Depending on complexity, the total cost across both phases is a fraction of what a multi-day trial can run, without the added risk of an adverse costs award if you lose.',
 	},
 	{
 		q: 'How long does it take?',
@@ -218,10 +207,10 @@ const hexTinyLight = `<svg viewBox="0 0 174 200" width="12" height="14" aria-hid
 						<p class="eyebrow mt-5 text-white/55">Mediator · Arbitrator · Med-Arb Specialist</p>
 						<div class="relative mt-12">
 	<div class="absolute -left-6 top-3 hidden h-[82%] w-px bg-measured/70 lg:block"></div>
-	<h1 class="hero-h1">Forty-five years in the room.</h1>
+	<h1 class="hero-h1">Five decades in the room.</h1>
 </div>
 						<div class="mt-8 max-w-lg space-y-4 text-lg leading-relaxed text-white/85">
-							<p>Peter Buxton KC knows what a judge will do. So do the lawyers who retain him.</p>
+							<p>Since 1981, Peter Buxton K.C. has appeared as counsel in the Provincial Court, the BC Supreme Court, and the BC Court of Appeal. Lawyers who need an authority who has lived that experience, not just studied it, call Peter Buxton K.C.</p>
 							<p>Med-Arb delivers a binding decision in months, not years, with every chance to settle first.</p>
 						</div>
 						<div class="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -339,11 +328,7 @@ const hexTinyLight = `<svg viewBox="0 0 174 200" width="12" height="14" aria-hid
 							<h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">Why Peter.</h2>
 							<div class="mt-6 space-y-5 leading-relaxed text-slate-ink/80">
 								<p>
-									Peter Buxton has been a trial lawyer in BC since 1981. He has appeared in Provincial Court,
-									the BC Supreme Court, and the BC Court of Appeal across personal injury, criminal, family,
-									estate, corporate, and labour matters. He was appointed Queen’s Counsel (now King’s Counsel)
-									in 2015. He holds a Harvard Law School certification in mediation and completed his Med-Arb
-									specialist training through The Continuing Legal Education Society of B.C.
+									Peter Buxton has been a trial lawyer in BC since 1981. He has appeared before the Provincial Court, the BC Supreme Court, and the BC Court of Appeal in personal injury, criminal, family, estate, corporate, and labour matters.
 								</p>
 								<p>
 									He is a rostered member of Mediate BC, a practicing member of the Law Society of British
@@ -429,31 +414,7 @@ const hexTinyLight = `<svg viewBox="0 0 174 200" width="12" height="14" aria-hid
 								);
 							})}
 						</div>
-						<div class="mt-8 flex items-center gap-6">
-							<button
-								type="button"
-								data-testimonial-prev
-								aria-label="Previous testimonial"
-								class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-lg text-white/70 transition-colors hover:border-white hover:text-white"
-							>&#8249;</button>
-							<div class="flex items-center gap-2" data-testimonial-dots>
-								{testimonials.map((_, i) => (
-									<button
-										type="button"
-										data-testimonial-dot
-										data-index={i}
-										aria-label={`Go to testimonial ${i + 1}`}
-										class={`h-1.5 w-1.5 rounded-full transition-colors ${i === 0 ? 'bg-white' : 'bg-white/30'}`}
-									></button>
-								))}
-							</div>
-							<button
-								type="button"
-								data-testimonial-next
-								aria-label="Next testimonial"
-								class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-lg text-white/70 transition-colors hover:border-white hover:text-white"
-							>&#8250;</button>
-						</div>
+
 					</div>
 				</div>
 			</section>
